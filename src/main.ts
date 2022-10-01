@@ -15,11 +15,11 @@ interface KeplrWindow extends Window {
   getAccounts(): Function,
 }
 
-declare global {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface Window extends KeplrWindow {}
-}
-declare let window: KeplrWindow;
+// declare global {
+//   // eslint-disable-next-line @typescript-eslint/no-empty-interface
+//   interface Window extends KeplrWindow {}
+// }
+// declare let window: KeplrWindow;
 
 // const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
