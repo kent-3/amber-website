@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import { fromHex, SecretNetworkClient } from "secretjs";
-import * as database from './07-merkle-distribution.json';
+// import * as database from './07-merkle-distribution.json';
 import { bech32 } from 'bech32';
 import { Buffer } from 'buffer/';
 import type { Window as KeplrWindow, Keplr } from "@keplr-wallet/types";
