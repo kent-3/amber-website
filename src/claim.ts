@@ -1,6 +1,6 @@
 import { SecretNetworkClient } from "secretjs";
-// import * as database from './07-merkle-distribution.json';
-import { snapshot } from "./snap";
+import * as snapshot from './07-merkle-distribution.json';
+// import { snapshot } from "./snap";
 import { bech32 } from 'bech32';
 import { Buffer } from 'buffer/';
 
@@ -94,14 +94,18 @@ export function setupClaim(element: HTMLButtonElement) {
         element.innerHTML = `Add AMBER to Keplr!`
         await window.keplr.suggestToken(CHAIN_ID, amberContractAddress);
 
-        const newKey = bech32ToBytes(myAddress);
-        console.log(newKey)
-        console.log(snapshot.claims[newKey])
-        console.log(snapshot.claims[myAddress])
-        try {var myIndex = snapshot.claims[newKey].index}
+        const myBytes = bech32ToBytes(myAddress);
+        console.log(myBytes)
+        //@ts-ignore
+        console.log(snapshot.claims[myBytes])
+
+        //@ts-ignore
+        try {var myIndex = snapshot.claims[myBytes].index}
         catch {alert("Your address was not found in the snapshot!")}
-        const myAmount = parseInt(snapshot.claims[newKey].amount).toString()
-        const myProof = snapshot.claims[newKey].proof
+        //@ts-ignore
+        const myAmount = parseInt(snapshot.claims[myBytes].amount).toString()
+        //@ts-ignore
+        const myProof = snapshot.claims[myBytes].proof
 
         const claimMsg = {
             claim: {
