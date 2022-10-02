@@ -26,4 +26,3 @@ src/deployment
 .env
 src/07-merkle-distribution.json
 public/07-merkle-distribution.json
-src/snap.ts

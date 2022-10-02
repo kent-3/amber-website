@@ -74,10 +74,13 @@ export function setupClaim(element: HTMLButtonElement) {
             }
         }
     ////////////////////////////////////////////////////////////////////////
-
+        console.log("pulsar-2 added")
         await window.keplr.enable(CHAIN_ID)
+        console.log("keplr enabled")
+
         const keplrOfflineSigner = window.keplr.getOfflineSignerOnlyAmino(CHAIN_ID)
         const [{ address: myAddress }] = await keplrOfflineSigner.getAccounts()
+        console.log(myAddress)
 
         const secretjs = await SecretNetworkClient.create({
         grpcWebUrl,
