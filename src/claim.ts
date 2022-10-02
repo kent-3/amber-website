@@ -1,5 +1,6 @@
 import { SecretNetworkClient } from "secretjs";
-import * as database from './07-merkle-distribution.json';
+// import * as database from './07-merkle-distribution.json';
+import { snapshot } from "./snap";
 import { bech32 } from 'bech32';
 import { Buffer } from 'buffer/';
 
@@ -95,17 +96,12 @@ export function setupClaim(element: HTMLButtonElement) {
 
         const newKey = bech32ToBytes(myAddress);
         console.log(newKey)
-        // @ts-ignore
-        console.log(database.claims[newKey])
-        // @ts-ignore
-        console.log(database.claims[myAddress])
-        // @ts-ignore
-        try {var myIndex = database.claims[newKey].index}
+        console.log(snapshot.claims[newKey])
+        console.log(snapshot.claims[myAddress])
+        try {var myIndex = snapshot.claims[newKey].index}
         catch {alert("Your address was not found in the snapshot!")}
-        // @ts-ignore
-        const myAmount = parseInt(database.claims[newKey].amount).toString()
-        // @ts-ignore
-        const myProof = database.claims[newKey].proof
+        const myAmount = parseInt(snapshot.claims[newKey].amount).toString()
+        const myProof = snapshot.claims[newKey].proof
 
         const claimMsg = {
             claim: {
