@@ -25,24 +25,25 @@
 #top-bg {
   position: static;
   margin: -2rem -2rem;
-  width: auto;
-  height: 800px;
-  background-color: #262626;
+  height: 900px;
 }
 
 #header-container {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
   padding-left: 6rem;
   padding-right: 6rem;
-  background-color: #262626;
+  /* background-color: #262626; */
   margin: -2rem -2rem;
+  height: 991px;
+  background-image: url(/header-background.svg);
+  background-size: 100%;
 }
 
 #logo {
   padding: 3rem;
-  margin-top: -10rem;
+  margin-top: 4rem;
 }
 #logo img {
   margin-bottom: -4rem;
@@ -161,6 +162,6 @@
   padding: 3rem;
 }
 
-footer {
+/* footer {
   background-color: #262626;
-}
+} */
