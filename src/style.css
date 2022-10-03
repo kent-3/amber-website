@@ -151,12 +151,17 @@
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #262626;
   margin: -2rem -2rem;
+  margin-top: -5rem;
+
+  background-image: url(/calculator-background.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
 }
 #node-digest h1 {
   display: inline-block;
-  margin-top: 6rem;
+  margin-top: 14rem;
   text-align:center;
   color: #FEFFFF;
   font-weight: 800;
