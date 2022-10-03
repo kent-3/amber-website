@@ -161,22 +161,59 @@
 }
 #node-digest h1 {
   display: inline-block;
-  margin-top: 14rem;
+  margin-top: 17rem;
   text-align:center;
   color: #FEFFFF;
   font-weight: 800;
   font-size: 2.75rem;
 }
-#node-digest p {
+#node-digest h2 {
   display: inline-block;
   margin: auto;
   color: #FEFFFF;
+  line-height: 3rem;
 }
 #node-digest img {
   display: inline-block;
   padding: 3rem;
 }
 
-/* footer {
-  background-color: #262626;
-} */
+#follow {
+  float: right;
+  height: 500px;
+  width: 500px;
+  margin: -14rem -2rem 0rem 0rem;
+
+  background-image: url(/follow.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right;
+}
+
+#sticker {
+  position: absolute;
+  top: 4000px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  margin: 0rem -2rem 0rem 0rem;
+
+  background-image: url(/sticker.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right;
+}
+
+#footer {
+  height: 800px;
+  padding-top: 5rem;
+  margin: -2rem -2rem;
+  background-image: url(/footer.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+body {
+  overflow: hidden scroll;
+}
