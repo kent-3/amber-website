@@ -153,6 +153,7 @@
   flex-wrap: wrap;
   margin: -2rem -2rem;
   margin-top: -5rem;
+  height: 1300px;
 
   background-image: url(/calculator-background.svg);
   background-repeat: no-repeat;
@@ -178,11 +179,26 @@
   padding: 3rem;
 }
 
+#where-to-stake {
+  position: absolute;
+  width: 1153px;
+  height: 374px;
+  left: 160px;
+  top: 3278px;
+
+  background-image: url(/where-to-stake.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
 #follow {
+  position: relative;
   float: right;
   height: 500px;
   width: 500px;
-  margin: -14rem -2rem 0rem 0rem;
+  margin: 10rem -2rem 0rem 0rem;
+  margin-top: 300px;
 
   background-image: url(/follow.svg);
   background-repeat: no-repeat;
@@ -191,12 +207,13 @@
 }
 
 #sticker {
-  position: absolute;
-  top: 4000px;
-  right: 0px;
-  height: 100%;
-  width: 100%;
+  position: relative;
+  
+  height: 477px;
+  width: 399px;
   margin: 0rem -2rem 0rem 0rem;
+  margin-left: 74%;
+  margin-top: 600px;
 
   background-image: url(/sticker.svg);
   background-repeat: no-repeat;
@@ -205,9 +222,11 @@
 }
 
 #footer {
-  height: 800px;
+  position: relative;
+  height: 400px;
   padding-top: 5rem;
   margin: -2rem -2rem;
+  margin-top: -226px;
   background-image: url(/footer.svg);
   background-repeat: no-repeat;
   background-size: 100%;
