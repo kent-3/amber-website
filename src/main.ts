@@ -1,5 +1,5 @@
 // import { SecretNetworkClient } from "secretjs";
-import { setupClaim } from './claim';
+// import { setupClaim } from './claim';
 
 // setupClaim(document.querySelector<HTMLButtonElement>('#claim-button')!)
 
@@ -34,6 +34,7 @@ btn.onclick = function() {
 }
 
 // When the user clicks on <span> (x), close the modal
+// @ts-ignore
 span.onclick = function() {
   modal.style.display = "none";
 }
