@@ -18,10 +18,8 @@ Update `.env` values as needed.
 npm run dev
 ```
 
-## Start Express Back-End
-
-In a new terminal:
+## Compile for Production
 
 ```sh
-npm run backend
+npm run build
 ```
