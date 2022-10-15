@@ -66,10 +66,14 @@ export function setupConnectKeplr(element: HTMLButtonElement) {
         bubble.style.color = "#121E34"
         bubble.style.backgroundColor = "#FFBF00"
         line.innerHTML = `<img src="/line-3-yellow.svg" alt="">`
-        element.style.backgroundImage = "none"
-
+        
         next.style.display = "block"
 
-        element.disabled = false
+        document.getElementById("connect-container").innerHTML = `
+        <h1>Connect your wallet</h1>
+        <img id="connect-keplr" src="keplr-button.svg" >
+        `
+        document.getElementById("connect-keplr").style.backgroundImage = "none"
+        element.style.cursor = "default"
     })
 }

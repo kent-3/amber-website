@@ -6,21 +6,25 @@ import { setupConnectWallet } from "./connect-wallet";
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
 setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
 
-// const grpcWebUrl = import.meta.env.VITE_GRPC_URL
+const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
+const chainId = import.meta.env.VITE_MAINNET_CHAIN_ID
 
-// const secretjs = await SecretNetworkClient.create({
-//   grpcWebUrl,
-//   chainId: "secret-4",
-// });
+const secretjs = await SecretNetworkClient.create({
+  grpcWebUrl,
+  chainId: chainId,
+});
 
-// const { validator: validatorResponse } = await secretjs.query.staking.validator({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6'})
-// let scrt = Math.round(parseInt(validatorResponse.tokens) / 1000000 )
-// console.log(`AmberDAO has ${scrt} SCRT staked.`)
-// document.querySelector<HTMLElement>('#stake-value').innerHTML=`${scrt}`
+const { validator: validatorResponse } = await secretjs.query.staking.validator({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6'})
+let scrt = Math.round(parseInt(validatorResponse.tokens) / 1000000 )
+console.log(`AmberDAO has ${scrt} SCRT staked.`)
+document.querySelector<HTMLElement>('#stake-value').innerHTML=`${scrt}`
+document.querySelector<HTMLElement>('#voting-power').innerHTML=`${scrt}`
 
-// const { delegationResponses: delegationResponse } = await secretjs.query.staking.validatorDelegations({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'1000000'}})
-// let total: number = delegationResponse.length
-// console.log(`AmberDAO has ${total} delegations.`)
+const { delegationResponses: delegationResponse } = await secretjs.query.staking.validatorDelegations({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'1000000'}})
+let total: number = delegationResponse.length
+console.log(`AmberDAO has ${total} delegations.`)
+document.querySelector<HTMLElement>('#delegators').innerHTML=`${total}`
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
