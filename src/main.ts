@@ -26,7 +26,7 @@ setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("claim-button");
+var btn = document.getElementById("start-button");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

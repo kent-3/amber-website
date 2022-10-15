@@ -30,7 +30,7 @@ export function setupConnectWallet(element: HTMLButtonElement) {
         document.getElementById("status-line-4").innerHTML = `<img src="/line-4-yellow.svg" alt="">`
         document.getElementById("connect-container").style.display = "none"
         document.getElementById("connect-wallet").style.display = "none"
-        document.getElementById("step3-container").style.display = "flex"
+        document.getElementById("step3-container").style.display = "grid"
         document.getElementById("secret-account").innerHTML = 
             `Connected account: ${myAddress.substring(0,13)}...${myAddress.substring(39)}`
 
