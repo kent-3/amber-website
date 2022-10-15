@@ -1,7 +1,10 @@
-// import { SecretNetworkClient } from "secretjs";
+import { SecretNetworkClient } from "secretjs";
 // import { setupClaim } from './claim';
+import { setupConnectKeplr } from "./connect-keplr";
+import { setupConnectWallet } from "./connect-wallet";
 
-// setupClaim(document.querySelector<HTMLButtonElement>('#claim-button')!)
+setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
+setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
 
 // const grpcWebUrl = import.meta.env.VITE_GRPC_URL
 

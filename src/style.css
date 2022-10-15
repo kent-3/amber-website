@@ -171,7 +171,23 @@
   align-items: center;
   margin-top: -0rem;
 }
-.status-bubble {
+
+#status-bubble-1 {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.54);
+  margin: 1% 1%;
+  line-height: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #FFBF00;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #121E34;
+  background-color: rgba(255, 255, 255, 0.54);
+}
+#status-bubble-2 {
   align-items: center;
   color: rgba(255, 255, 255, 0.54);
   margin: 1% 1%;
@@ -185,6 +201,35 @@
   color: #121E34;
   background-color: rgba(255, 255, 255, 0.54);
 }
+#status-bubble-3 {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.54);
+  margin: 1% 1%;
+  line-height: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #121E34;
+  background-color: rgba(255, 255, 255, 0.54);
+}
+#status-bubble-4 {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.54);
+  margin: 1% 1%;
+  line-height: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #121E34;
+  background-color: rgba(255, 255, 255, 0.54);
+}
+
 .status-bubble-label {
   position: relative;
   left: 50%;
@@ -196,26 +241,27 @@
   text-align: center;
   width: 100px;
 }
-.status-line-3 img {
+
+#status-line-3 img {
   color: rgba(255, 255, 255, 0.54);
   width: 75px;
   height: 50px;
   translate: 0 10px;
 }
-.status-line-4 img {
+#status-line-4 img {
   color: rgba(255, 255, 255, 0.54);
   width: 75px;
   height: 50px;
   translate: 0 -10px;
 }
-.status-line-5 img {
+#status-line-5 img {
   color: rgba(255, 255, 255, 0.54);
   width: 75px;
   height: 50px;
   translate: 0 10px;
 }
 
-.connect-container {
+#connect-container {
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -223,7 +269,7 @@
   margin-top: 0rem;
   margin-bottom: 0rem;
 }
-.connect-container h1 {
+#connect-container h1 {
   position: relative;
   top: -46%;
   font-size: 1.8rem;
@@ -231,7 +277,7 @@
   margin-bottom: 0rem;
   text-align: center;
 }
-.connect-container img {
+#connect-container img {
   position: relative;
   top: -45%;
   height: 4.5rem;
@@ -239,10 +285,31 @@
   margin-top: 2rem;
   background-image: url(/keplr-button.svg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: contain;
   background-position: center;
 }
 
+#connect-wallet {
+  height: 4.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  background-image: url(/next-button.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: none;
+}
+
+#step3-container {
+  display: none;
+  flex-direction: column;
+  align-self: center;
+  border: 2px solid #FFBF00;
+  height: 50%;
+  width: 50%;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
 
 /* The Close Button */
 .close {
