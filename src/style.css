@@ -133,7 +133,7 @@
 }
 
 /* Modal Content/Box */
-.modal-content {
+#modal-content {
   color: rgba(255, 255, 255, 0.54);
 
   background-color: #121E34;
@@ -158,7 +158,7 @@
   height: 100%;
   margin-top: -0rem;
   transform: translateY(-3.5rem);
-  z-index: auto;
+  z-index: 1;
 }
 
 .status-container {
@@ -307,6 +307,7 @@
 #step3-container {
   display: none;
   grid-template-columns: 50% 50%;
+  row-gap: 20px;
   align-self: center;
   justify-self: center;
   height: 200px;
@@ -314,19 +315,28 @@
   margin-top: 0rem;
   margin-bottom: 0rem;
 }
+#your-scrt-address {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  text-align: left;
+  color: #F0F1F5;
+  font-weight: 600;
+  font-size: 2rem;
+}
 #address-field {
   grid-column: 1 / span 2;
+  grid-row: 2;
   align-self: center;
   justify-self: center;
 }
 #airdrop-amount {
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 1;
   align-self: center;
   justify-self: left;
 }
 #claim-button {
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 2;
   align-self: center;
   justify-self: right;
@@ -342,7 +352,7 @@
   margin: 1% 1%;
   font-size: 3.25rem;
   font-weight: 800;
-  z-index: 1;
+  z-index: 2;
 }
 .close:hover,
 .close:focus {
@@ -352,7 +362,9 @@
 } 
 
 /* The Help Button */
-.help {
+#help {
+  display: block;
+  position: relative;
   color: rgba(255, 255, 255, 0.54);
   float: right;
   margin: 1% 1%;
@@ -364,13 +376,28 @@
   text-align: center;
   color: #121E34;
   background-color: rgba(255, 255, 255, 0.54);
-  z-index: 1;
+  z-index: 2;
 }
-.help:hover,
-.help:focus {
+#help:hover {
   background-color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   cursor: pointer;
+  z-index: 1;
+} 
+
+/* Tooltip text */
+#help #helptext {
+  visibility: hidden;
+  width: 212px;
+  height: 100px;
+
+  /* Position the tooltip text - see examples below! */
+  top: -5px;
+  z-index: 2;
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+#help:hover #helptext {
+  visibility: visible;
 } 
 
 #notice {
@@ -378,7 +405,7 @@
   align-self: end;
   justify-self: center;
   color: rgba(255, 255, 255, 0.54);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   text-align: center;
 }
