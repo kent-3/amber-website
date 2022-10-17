@@ -1,5 +1,4 @@
 import { SecretNetworkClient } from "secretjs";
-// import * as snapshot from './07-merkle-distribution.json';
 import { snapshot } from "./snap";
 import { bech32 } from 'bech32';
 import { Buffer } from 'buffer/';
@@ -12,7 +11,6 @@ function bech32ToBytes(address: string): string {
 }
 
 export function setupClaim(element: HTMLButtonElement) {
-    element.innerHTML = `CLAIM`
     element.disabled = false
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
     const grpcWebUrl = import.meta.env.VITE_GRPC_URL

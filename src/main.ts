@@ -1,10 +1,11 @@
 import { SecretNetworkClient } from "secretjs";
-// import { setupClaim } from './claim';
+import { setupClaim } from './claim';
 import { setupConnectKeplr } from "./connect-keplr";
 import { setupConnectWallet } from "./connect-wallet";
 
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
 setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
+setupClaim(document.querySelector<HTMLButtonElement>('#claim-button')!)
 
 // Get the modal
 var modal = document.querySelector<HTMLElement>('#myModal')

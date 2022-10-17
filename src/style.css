@@ -171,10 +171,13 @@
 }
 
 #status-bubble-1 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   align-items: center;
   color: rgba(255, 255, 255, 0.54);
   margin: 5px;
-  line-height: 45px;
+  line-height: 42px;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -186,12 +189,16 @@
   background-color: rgba(255, 255, 255, 0.54);
 }
 #status-bubble-2 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   align-items: center;
   color: rgba(255, 255, 255, 0.54);
   margin: 5px;
-  line-height: 45px;
+  line-height: 42px;
   width: 45px;
   height: 45px;
+  border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 50%;
   font-size: 1.5rem;
   font-weight: 700;
@@ -200,12 +207,16 @@
   background-color: rgba(255, 255, 255, 0.54);
 }
 #status-bubble-3 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   align-items: center;
   color: rgba(255, 255, 255, 0.54);
   margin: 5px;
-  line-height: 45px;
+  line-height: 42px;
   width: 45px;
   height: 45px;
+  border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 50%;
   font-size: 1.5rem;
   font-weight: 700;
@@ -214,12 +225,16 @@
   background-color: rgba(255, 255, 255, 0.54);
 }
 #status-bubble-4 {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   align-items: center;
   color: rgba(255, 255, 255, 0.54);
   margin: 5px;
-  line-height: 45px;
+  line-height: 42px;
   width: 45px;
   height: 45px;
+  border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 50%;
   font-size: 1.5rem;
   font-weight: 700;
@@ -269,16 +284,12 @@
   margin-bottom: 0rem;
 }
 #connect-container h1 {
-  /* position: relative; */
-  /* top: -46%; */
   font-size: 1.8rem;
   color: #F0F1F5;
   margin-bottom: 0rem;
   text-align: center;
 }
 #connect-container img {
-  /* position: relative; */
-  /* top: -45%; */
   height: 4.5rem;
   cursor: pointer;
   margin-top: 2rem;
@@ -288,19 +299,24 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: background-image ease 100ms;
 }
+
 
 #connect-wallet {
   grid-row: 2;
   grid-column: 1;
   align-self: end;
-  height: 4.5rem;
+  height: 72px;
+  width: 250px;
+  justify-self: center;
   cursor: pointer;
   margin-top: 2rem;
   background-image: url(/next-button.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: background-image ease 200ms;
   display: none;
 }
 
@@ -341,6 +357,7 @@
   align-self: center;
   justify-self: right;
   margin-right: -5px;
+  cursor: pointer;
 }
 
 /* The Close Button */
@@ -395,10 +412,16 @@
   right: 190px;
   z-index: 2;
 }
-/* Show the tooltip text when you mouse over the tooltip container */
-/* #help:hover #helptext {
-  visibility: visible;
-}  */
+
+.tg-icon {
+  position: absolute;
+  top: -26px;
+  left: 95px;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #121E34;
+  border-radius: 50%;
+}
 
 #notice {
   grid-row: 3;
@@ -452,7 +475,7 @@
 
   background-image: url(/calculator-background.svg);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: top;
 }
 #node-digest h1 {
@@ -566,10 +589,13 @@ body {
   transform: translateX(-4px) translateY(-4px);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   #logo {
     padding-top: 1rem;
+    margin: 0;
     margin-bottom: 5rem;
+    justify-self: center;
+    justify-items: center;
   }
   #illustration {
     display: none;

@@ -75,5 +75,6 @@ export function setupConnectKeplr(element: HTMLButtonElement) {
         `
         document.getElementById("connect-keplr").style.backgroundImage = "none"
         element.style.cursor = "default"
+        document.getElementById("status-bubble-2").style.border = "2px solid #FFBF00"
     })
 }

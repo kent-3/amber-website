@@ -5,6 +5,13 @@ export function setupConnectWallet(element: HTMLButtonElement) {
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
     const grpcWebUrl = import.meta.env.VITE_GRPC_URL
 
+    element.onpointerdown = ()=> {
+        element.style.backgroundImage = `url(/next-button-pressed.svg)`
+    }
+    element.onpointerup = ()=> {
+        element.style.backgroundImage = `url(/next-button.svg)`
+    }
+
     element.addEventListener("click", async function(event: Event){
         event.preventDefault()
         element.disabled = true
@@ -30,6 +37,7 @@ export function setupConnectWallet(element: HTMLButtonElement) {
         document.getElementById("status-line-4").innerHTML = `<img src="/line-4-yellow.svg" alt="">`
         document.getElementById("connect-container").style.display = "none"
         document.getElementById("connect-wallet").style.display = "none"
+        document.getElementById("status-bubble-3").style.border = "2px solid #FFBF00"
         document.getElementById("step3-container").style.display = "grid"
         document.getElementById("secret-account").innerHTML = 
             `Connected account: ${myAddress.substring(0,13)}...${myAddress.substring(39)}`
