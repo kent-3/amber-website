@@ -344,7 +344,7 @@
 }
 
 /* The Close Button */
-.close {
+#close {
   display: block;
   position: relative;
   color: rgba(255, 255, 255, 0.54);
@@ -354,8 +354,8 @@
   font-weight: 800;
   z-index: 2;
 }
-.close:hover,
-.close:focus {
+#close:hover,
+#close:focus {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   cursor: pointer;
@@ -379,7 +379,7 @@
   z-index: 2;
 }
 #help:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #60BFCF;
   text-decoration: none;
   cursor: pointer;
   z-index: 1;
@@ -387,18 +387,18 @@
 
 /* Tooltip text */
 #help #helptext {
-  visibility: hidden;
+  position: relative;
   width: 212px;
   height: 100px;
-
-  /* Position the tooltip text - see examples below! */
-  top: -5px;
+  
+  top: 10px;
+  right: 190px;
   z-index: 2;
 }
 /* Show the tooltip text when you mouse over the tooltip container */
-#help:hover #helptext {
+/* #help:hover #helptext {
   visibility: visible;
-} 
+}  */
 
 #notice {
   grid-row: 3;
@@ -564,4 +564,14 @@ body {
   opacity: 1;
   transition: opacity 500ms ease 0s, transform 400ms ease 0s;
   transform: translateX(-4px) translateY(-4px);
+}
+
+@media (max-width: 600px) {
+  #logo {
+    padding-top: 1rem;
+    margin-bottom: 5rem;
+  }
+  #illustration {
+    display: none;
+  }
 }
