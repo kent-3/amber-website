@@ -17,64 +17,10 @@ export function setupClaim(element: HTMLButtonElement) {
 
     const distributorContractAddress = import.meta.env.VITE_CONTRACT_ADDRESS
     const distributorContractHash = import.meta.env.VITE_CONTRACT_CODE_HASH
-    const amberContractAddress: string = import.meta.env.VITE_SNIP20_ADDRESS
 
     element.addEventListener("click", async function(event: Event){
         event.preventDefault()
         element.disabled = true
-
-        if (!window.getOfflineSigner || !window.keplr) {
-            alert("Please install Keplr extension");
-        } else {
-    ////////////////////////////////////////////////////////////////////////
-            if (CHAIN_ID.includes("pulsar") && window.keplr.experimentalSuggestChain) {
-            try {
-                await window.keplr.experimentalSuggestChain({
-                chainId: "pulsar-2",
-                chainName: "Secret Testnet",
-                rpc: "https://rpc.testnet.secretsaturn.net",
-                rest: "https://lcd.testnet.secretsaturn.net",
-                stakeCurrency: {
-                    coinDenom: "SCRT",
-                    coinMinimalDenom: "uscrt",
-                    coinDecimals: 6,
-                },
-                bip44: {
-                    coinType: 529,
-                },
-                bech32Config: {
-                    bech32PrefixAccAddr: "secret",
-                    bech32PrefixAccPub: "secretpub",
-                    bech32PrefixValAddr: "secretvaloper",
-                    bech32PrefixValPub: "secretvaloperpub",
-                    bech32PrefixConsAddr: "secretvalcons",
-                    bech32PrefixConsPub: "secretvalconspub"
-                },
-                currencies: [{
-                    coinDenom: "SCRT",
-                    coinMinimalDenom: "uscrt",
-                    coinDecimals: 6,
-                }],
-                feeCurrencies: [{
-                    coinDenom: "SCRT",
-                    coinMinimalDenom: "uscrt",
-                    coinDecimals: 6,
-                    coinGeckoId: "secret"
-                }],
-                coinType: 529,
-                features: ["secretwasm", "ibc-go"]
-                });
-            } catch {
-                alert("Failed to suggest the chain");
-                }
-            } else {
-                alert("Please use the recent version of keplr extension"); 
-            }
-        }
-    ////////////////////////////////////////////////////////////////////////
-        console.log("pulsar-2 added")
-        await window.keplr.enable(CHAIN_ID)
-        console.log("keplr enabled")
 
         const keplrOfflineSigner = window.keplr.getOfflineSignerOnlyAmino(CHAIN_ID)
         const [{ address: myAddress }] = await keplrOfflineSigner.getAccounts()
@@ -88,14 +34,7 @@ export function setupClaim(element: HTMLButtonElement) {
         encryptionUtils: window.keplr.getEnigmaUtils(CHAIN_ID),
         })
 
-        console.log(secretjs.address)
-
-        element.innerHTML = `Connected account: ${myAddress.substring(0,13)}...${myAddress.substring(39)}`
-
-        element.innerHTML = `Add AMBER to Keplr!`
-        await window.keplr.suggestToken(CHAIN_ID, amberContractAddress);
-
-        const myBytes = bech32ToBytes(myAddress);
+        const myBytes = bech32ToBytes("secret1qx5pppsfrqwlnmxj7prpx8rysxm2u5vzx6jm8a");
         console.log(myBytes)
         //@ts-ignore
         console.log(snapshot.claims[myBytes])
@@ -112,36 +51,47 @@ export function setupClaim(element: HTMLButtonElement) {
             claim: {
             // these are not my values, just test values from the actual merkle tree
             index: myIndex,
-            address: myAddress,
+            address: "secret1qx5pppsfrqwlnmxj7prpx8rysxm2u5vzx6jm8a",
             amount: myAmount,
             proof: myProof,
             },
         };
         
-        element.innerHTML = `Submit claim!`
-        const tx = await secretjs.tx.compute.executeContract(
-            {
-            sender: secretjs.address,
-            contractAddress: distributorContractAddress,
-            codeHash: distributorContractHash,
-            msg: claimMsg,
-            sentFunds: [],
-            },
-            {
-            gasLimit: 200000,
-            }
-        );
+        // const tx = await secretjs.tx.compute.executeContract(
+        //     {
+        //     sender: secretjs.address,
+        //     contractAddress: distributorContractAddress,
+        //     codeHash: distributorContractHash,
+        //     msg: claimMsg,
+        //     sentFunds: [],
+        //     },
+        //     {
+        //     gasLimit: 200000,
+        //     }
+        // );
 
-        if (tx.code !== 0) {
-            alert(
-            `Failed with the following error:\n ${tx.rawLog}`
-            );
-        } else {
-            const response = tx.arrayLog?.find(
-            (log) => log.type === "wasm" && log.key === "status"
-            )!.value;
-            alert(response);
-        }
-        element.innerHTML = `Claimed!`
+        // if (tx.code !== 0) {
+        //     alert(
+        //     `Failed with the following error:\n ${tx.rawLog}`
+        //     );
+        // } else {
+        //     const response = tx.arrayLog?.find(
+        //     (log) => log.type === "wasm" && log.key === "status"
+        //     )!.value;
+        //     alert(response);
+        // }
+
+        var bubble = document.getElementById("status-bubble-4")
+        bubble.style.color = "#121E34"
+        bubble.style.backgroundColor = "#FFBF00"
+        document.getElementById("status-line-5").innerHTML = `<img src="/line-5-yellow.svg" alt="">`
+        document.getElementById("status-bubble-4").style.border = "2px solid #FFBF00"
+        document.getElementById("status-bubble-4-label").style.color = "#FFBF00"
+
+
+        document.getElementById("step3-container").style.display = "none"
+        document.getElementById("success-container").style.display = "flex"
+        document.getElementById("modal-content").style.backgroundImage = `url("/heart-illustration.svg")`
+        
     })
 }

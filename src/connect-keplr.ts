@@ -59,22 +59,18 @@ export function setupConnectKeplr(element: HTMLButtonElement) {
         await window.keplr.enable(CHAIN_ID)
         console.log("keplr enabled")
 
-        var bubble = document.getElementById("status-bubble-1")
-        var line = document.getElementById("status-line-3")
-        var next = document.getElementById("connect-wallet")
-
-        bubble.style.color = "#121E34"
-        bubble.style.backgroundColor = "#FFBF00"
-        line.innerHTML = `<img src="/line-3-yellow.svg" alt="">`
+        document.getElementById("status-bubble-1").style.color = "#121E34"
+        document.getElementById("status-bubble-1").style.backgroundColor = "#FFBF00"
+        document.getElementById("status-bubble-1-label").style.color = "#FFBF00"
+        document.getElementById("status-line-3").innerHTML = `<img src="/line-3-yellow.svg" alt="">`
+        document.getElementById("status-bubble-2").style.border = "2px solid #FFBF00"
         
-        next.style.display = "block"
-
+        document.getElementById("connect-wallet").style.display = "block"
         document.getElementById("connect-container").innerHTML = `
         <h1>Connect your wallet</h1>
         <img id="connect-keplr" src="keplr-button.svg" >
         `
         document.getElementById("connect-keplr").style.backgroundImage = "none"
         element.style.cursor = "default"
-        document.getElementById("status-bubble-2").style.border = "2px solid #FFBF00"
     })
 }

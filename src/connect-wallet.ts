@@ -35,12 +35,15 @@ export function setupConnectWallet(element: HTMLButtonElement) {
         bubble.style.backgroundColor = "#FFBF00"
 
         document.getElementById("status-line-4").innerHTML = `<img src="/line-4-yellow.svg" alt="">`
+        document.getElementById("status-bubble-3").style.border = "2px solid #FFBF00"
+        document.getElementById("status-bubble-2-label").style.color = "#FFBF00"
+
         document.getElementById("connect-container").style.display = "none"
         document.getElementById("connect-wallet").style.display = "none"
-        document.getElementById("status-bubble-3").style.border = "2px solid #FFBF00"
         document.getElementById("step3-container").style.display = "grid"
-        document.getElementById("secret-account").innerHTML = 
-            `Connected account: ${myAddress.substring(0,13)}...${myAddress.substring(39)}`
+        document.getElementById("secret-address").innerHTML = 
+            `${myAddress}`
+            // `Connected account: ${myAddress.substring(0,13)}...${myAddress.substring(39)}`
 
         element.disabled = false
     })

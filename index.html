@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <link rel="stylesheet" href="./src/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,800" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AmberDAO</title>
   </head>
@@ -44,32 +45,32 @@
     <div id="help">?
   <span id="helptext" style="visibility: hidden;">
         <img src="help-tooltip.svg" >
-        <a href="about:blank" target="_blank"><div class="tg-icon"></div></a>
+        <a href="https://t.me/AmberDAOscrt" target="_blank"><div class="tg-icon"></div></a>
       </span>
     </div>
 
     <div class="modal-content-container">
       <div class="status-container">
         <div id="status-bubble-1">1
-          <div class="status-bubble-label">Wallet Type</div>
+          <div id="status-bubble-1-label">Wallet Type</div>
         </div>
         <div id="status-line-3">
           <img src="/Line 3.svg" alt="">
         </div>
         <div id="status-bubble-2">2
-          <div class="status-bubble-label">Connect Wallet</div>
+          <div id="status-bubble-2-label">Connect Wallet</div>
         </div>
         <div id="status-line-4">
           <img src="/Line 4.svg" alt="">
         </div>
         <div id="status-bubble-3">3
-          <div class="status-bubble-label">Airdrop Amount</div>
+          <div id="status-bubble-3-label">Airdrop Amount</div>
         </div>
         <div id="status-line-5">
           <img src="/Line 5.svg" alt="">
         </div>
         <div id="status-bubble-4">4
-          <div class="status-bubble-label">Claim Airdrop</div>
+          <div id="status-bubble-4-label">Claim Airdrop</div>
         </div>
       </div>
       <div id="connect-container">
@@ -83,16 +84,20 @@
           &nbsp;Your SCRT Address
         </div>
         <div id="address-field">
-          <img src="address-field.svg" >
+          <div class="modal-box"><img src="scrt-logo.svg" style="height:25px;">&emsp;<span id="secret-address">secret address</span></div>
         </div>
-        <div id="airdrop-amount">
-          <img src="airdrop-amount.svg" >
+        <div id="airdrop-box">
+          <div class="modal-box"><span id="airdrop-amount">Airdrop amount (create vk)</span></div>
         </div>
         <div id="claim-button">
-          <img src="claim-button.svg" >
+          <div class="modal-btn">Claim</div>
         </div>
       </div>
-        <div id="notice"><img src="note-icon.svg" >&emsp;This does not grant AmberDAO access to your funds. Private keys never leave your device.</div>
+      <div id="success-container">
+        <h2>Success!</h2>
+        <h4><span class="yellow">You've successfully claimed your AMBER airdrop</span></h4>
+      </div>
+      <div id="notice"><img src="note-icon.svg" >&emsp;This does not grant AmberDAO access to your funds. Private keys never leave your device.</div>
       </div>
     </div>
 
