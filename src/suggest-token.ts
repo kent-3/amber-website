@@ -21,13 +21,10 @@ export function setupSuggestToken(element: HTMLElement) {
         document.getElementById("airdrop-amount").style.fontSize = "16px"
         document.getElementById("airdrop-amount").innerHTML = `${myAmount}`
 
-        var bubble = document.getElementById("status-bubble-3")
-        bubble.style.color = "#121E34"
-        bubble.style.backgroundColor = "#FFBF00"
-        
-        
-        document.getElementById("status-line-4").innerHTML = `<img src="/line-4-yellow.svg" alt="">`
-        document.getElementById("status-bubble-4").style.border = "2px solid #FFBF00"
+        document.getElementById("status-bubble-3").style.color = "#121E34"
+        document.getElementById("status-bubble-3").style.backgroundColor = "#FFBF00"
         document.getElementById("status-bubble-3-label").style.color = "#FFBF00"
+        document.getElementById("status-bubble-4").style.border = "2px solid #FFBF00"
+        document.getElementById("status-line-4").innerHTML = `<img src="/line-4-yellow.svg" alt="">`
     })
 }

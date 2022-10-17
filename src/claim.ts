@@ -22,6 +22,8 @@ export function setupClaim(element: HTMLButtonElement) {
         event.preventDefault()
         element.disabled = true
 
+        
+
         const keplrOfflineSigner = window.keplr.getOfflineSignerOnlyAmino(CHAIN_ID)
         const [{ address: myAddress }] = await keplrOfflineSigner.getAccounts()
         console.log(myAddress)
@@ -57,37 +59,34 @@ export function setupClaim(element: HTMLButtonElement) {
             },
         };
         
-        // const tx = await secretjs.tx.compute.executeContract(
-        //     {
-        //     sender: secretjs.address,
-        //     contractAddress: distributorContractAddress,
-        //     codeHash: distributorContractHash,
-        //     msg: claimMsg,
-        //     sentFunds: [],
-        //     },
-        //     {
-        //     gasLimit: 200000,
-        //     }
-        // );
+        const tx = await secretjs.tx.compute.executeContract(
+            {
+            sender: secretjs.address,
+            contractAddress: distributorContractAddress,
+            codeHash: distributorContractHash,
+            msg: claimMsg,
+            sentFunds: [],
+            },
+            {
+            gasLimit: 200000,
+            }
+        );
 
-        // if (tx.code !== 0) {
-        //     alert(
-        //     `Failed with the following error:\n ${tx.rawLog}`
-        //     );
-        // } else {
-        //     const response = tx.arrayLog?.find(
-        //     (log) => log.type === "wasm" && log.key === "status"
-        //     )!.value;
-        //     alert(response);
-        // }
+        if (tx.code !== 0) {
+            alert(
+            `Failed with the following error:\n ${tx.rawLog}`
+            );
+        } else {
+            const response = tx.arrayLog?.find(
+            (log) => log.type === "wasm" && log.key === "status"
+            )!.value;
+            alert(response);
+        }
 
-        var bubble = document.getElementById("status-bubble-4")
-        bubble.style.color = "#121E34"
-        bubble.style.backgroundColor = "#FFBF00"
-        document.getElementById("status-line-5").innerHTML = `<img src="/line-5-yellow.svg" alt="">`
-        document.getElementById("status-bubble-4").style.border = "2px solid #FFBF00"
+        document.getElementById("status-bubble-4").style.color = "#121E34"
+        document.getElementById("status-bubble-4").style.backgroundColor = "#FFBF00"
         document.getElementById("status-bubble-4-label").style.color = "#FFBF00"
-
+        document.getElementById("status-line-5").innerHTML = `<img src="/line-5-yellow.svg" alt="">`
 
         document.getElementById("step3-container").style.display = "none"
         document.getElementById("success-container").style.display = "flex"
