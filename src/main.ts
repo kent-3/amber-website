@@ -31,11 +31,11 @@ help.onclick = () => {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// } 
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
 
 window.onload = async ()=>{
   const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
