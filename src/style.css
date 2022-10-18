@@ -37,6 +37,7 @@
   padding: 3rem;
   margin-top: 0rem;
   margin-right: 3rem;
+  max-width: 500px;
 }
 #logo img {
   margin-bottom: -35px;
@@ -552,7 +553,8 @@
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
-#eligibility-section h1 {
+#eligibility-header h1 {
+  text-align: center;
   padding: 0 10px;
   line-height: 1.2;
 }
@@ -763,6 +765,9 @@ body {
   #status-bubble-1 {
     margin-bottom: 25px;
   }
+  #eligibility-header h1{
+    text-align: left;
+  }
   #node-digest {
     background-size: cover;
     justify-items: center;
@@ -773,18 +778,23 @@ body {
     margin: -1rem -1rem;
   }
   #node-digest h1{
+    text-align: left;
     margin-top: 200px;
     width: 90vw;
     line-height: 3rem;
   }
   #node-digest h2{
+    text-align: left;
     width: 90vw;
   }
   #node-digest img {
     padding: 3rem 0;
     width: 95vw;
   }
-
+  #where-to-stake{
+    display: flex;
+    margin-top: 0;
+  }
   #follow {
     height: auto;
     width: auto;
@@ -793,11 +803,13 @@ body {
   }
   #sticker {
     position: relative;
-    display: flex;
+    display: none;
     float: right;
     transform: none;
   }
   #footer {
-  background-size: cover;
+    margin-top: 100px;
+    background-size: cover;
+    background-position: bottom;
   }
 }
