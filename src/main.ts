@@ -2,9 +2,11 @@ import { SecretNetworkClient } from "secretjs";
 import { setupClaim } from './claim';
 import { setupConnectKeplr } from "./connect-keplr";
 import { setupConnectWallet } from "./connect-wallet";
+import { setupMetaMask } from "./metamask";
 import { setupSuggestToken } from "./suggest-token";
 
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
+setupMetaMask(document.querySelector<HTMLButtonElement>('#connect-metamask')!)
 setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
 setupSuggestToken(document.querySelector<HTMLElement>('#airdrop-box')!)
 setupClaim(document.querySelector<HTMLButtonElement>('#claim-button')!)
