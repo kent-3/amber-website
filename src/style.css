@@ -377,16 +377,6 @@
   grid-column: 1;
   align-self: end;
   justify-self: center;
-
-  height: 50px;
-  width: 210px;
-  margin-top: 2rem;
-
-  background-image: url(/next-button.svg);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
-  transition: background-image ease 200ms;
 }
 
 #step3-container {

@@ -66,7 +66,7 @@ export function setupConnectKeplr(element: HTMLButtonElement) {
         document.getElementById("status-line-3").innerHTML = `<img src="/line-3-yellow.svg" alt="">`
         document.getElementById("status-bubble-2").style.border = "2px solid #FFBF00"
         
-        document.getElementById("connect-wallet").style.display = "block"
+        document.getElementById("connect-wallet").style.display = "grid"
         document.getElementById("connect-container").innerHTML = `
         <h1>Connect your wallet</h1>
         <img id="connect-keplr" src="keplr-button.svg" >
