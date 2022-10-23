@@ -1,17 +1,10 @@
 import { SecretNetworkClient } from "secretjs";
+import { bech32ToBytes } from "./bech32-to-bytes"
 import { snapshot } from "./snap";
-import { bech32 } from 'bech32';
-import { Buffer } from 'buffer/';
-
-function bech32ToBytes(address: string): string {
-    const bytes = bech32.fromWords(bech32.decode(address).words);
-    const buf = Buffer.from(bytes);
-    const newKey = "0x" + buf.toString("hex");
-    return newKey;
-}
 
 export function setupClaim(element: HTMLButtonElement) {
-    element.disabled = false
+    element.disabled = true
+    element.style.color = "#D3D3D3"
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
     const grpcWebUrl = import.meta.env.VITE_GRPC_URL
 

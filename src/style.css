@@ -566,7 +566,7 @@
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
-  margin: 20px;
+  margin: 20px 0px;
 }
 
 #mid-section {
@@ -739,13 +739,33 @@ h1 {
 @media (max-width: 1024px) {
   #header-container{
     background-size: cover;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    padding: 1rem;
   }
-  #logo {
-    padding-top: 20px;
+  #logo-container {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    transform: translateY(-25%);
+  }
+  #logo-container #logo-image img{
     margin: 0;
     justify-self: center;
     justify-items: center;
-    max-width:90vw;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+  }
+  #logo-container #logo-text img{
+    padding-top: 0px;
+    margin: 0;
+    justify-self: center;
+    justify-items: center;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
   }
   #illustration {
     display: none;
@@ -767,12 +787,14 @@ h1 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin-top: 0;
+    margin: 50px 0px;
     max-width: 100vw;
   }
   #claim-container img {
     display: flex;
     justify-self: center;
+    margin-top: 0;
+    width: auto;
     max-width: 100vw;
   }
   #start-button {
@@ -785,7 +807,8 @@ h1 {
     overflow: hidden;
   }
   .modal-content-container {
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 150px auto 125px;
+    transform: translateY(-6%);
   }
   #modal-content {
     left: 50vw;
@@ -802,10 +825,65 @@ h1 {
     flex-wrap: wrap;
     padding: 0px 20px;
     justify-content: center;
-    align-self: center;
+    align-self: start;
+    min-width: 260px;
+    max-width: 310px;
   }
   #status-bubble-1 {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+  }
+  #status-line-4 {
+    visibility: hidden;
+  }
+  #connect-container img {
+    margin-top: 10px;
+  }
+  #step3-container {
+    display: none;
+    grid-template-columns: auto;
+    row-gap: 20px;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    width: auto;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  #your-scrt-address {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: center;
+    color: #F0F1F5;
+    font-weight: 600;
+    font-size: 1.75rem;
+  }
+  #address-field {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    padding: 0 20px;
+    width: 80%;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+  #airdrop-box {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+    width: 210px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+  #claim-button {
+    grid-column: 1;
+    grid-row: 4;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    height: 50px;
+    width: 210px;
   }
   #eligibility-header h1{
     text-align: left;

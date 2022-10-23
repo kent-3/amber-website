@@ -26,5 +26,9 @@ export function setupSuggestToken(element: HTMLElement) {
         document.getElementById("status-bubble-3-label").style.color = "#FFBF00"
         document.getElementById("status-bubble-4").style.border = "2px solid #FFBF00"
         document.getElementById("status-line-4").innerHTML = `<img src="/line-4-yellow.svg" alt="">`
+        
+        document.querySelector<HTMLButtonElement>('#claim-button').disabled = false
+        document.querySelector<HTMLButtonElement>('#claim-button').style.color = "#F0F1F5"
+
     })
 }
