@@ -6,6 +6,7 @@ import { setupConnectWallet } from "./connect-wallet";
 import { setupSuggestToken } from "./suggest-token";
 
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
+setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-fina')!)
 // setupMetaMask(document.querySelector<HTMLButtonElement>('#connect-metamask')!)
 setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
 setupSuggestToken(document.querySelector<HTMLElement>('#airdrop-box')!)

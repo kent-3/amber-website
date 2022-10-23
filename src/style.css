@@ -344,7 +344,12 @@
   background-position: center;
   transition: background-image ease-in-out 300ms;
 }
-
+#connect-fina-message {
+  display: none;
+}
+#connect-fina {
+  display: none;
+}
 #connect-mm-container {
   grid-row: 2;
   grid-column: 1;
@@ -566,7 +571,7 @@
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
-  margin: 20px 0px;
+  margin-top: 20px;
 }
 
 #mid-section {
@@ -808,15 +813,17 @@ h1 {
   }
   .modal-content-container {
     grid-template-rows: 150px auto 125px;
-    transform: translateY(-6%);
+    transform: translateY(-35px);
   }
   #modal-content {
-    left: 50vw;
-    width: 80vw;
-    height: 88vh;
     position: fixed;
+    left: 50vw;
+    transform: translateX(-50%) translateY(10%);
+    width: 80vw;
+    height: 80vh;
     background-size: cover;
-    transform: translateX(-50%);
+    justify-self: center;
+    align-self: center;
   }
   .status-container {
     grid-row: 1;
@@ -835,8 +842,41 @@ h1 {
   #status-line-4 {
     visibility: hidden;
   }
+  #connect-container {
+    margin-top: 20px;
+  }
   #connect-container img {
     margin-top: 10px;
+    background-image: none;
+    height: 50px;
+    width: auto;
+    /* background-image: url(fina-logo.png); */
+  }
+  #connect-keplr {
+    display: none;
+  }
+  #connect-message {
+    display: none;
+  }
+  #connect-fina-message {
+    display: inline;
+  }
+  #connect-fina {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  
+    display: flex;
+    margin-top: 20px;
+    height: 50px;
+    width: 210px;
+    background-image: url(/fina-logo.png);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+
+    box-shadow: -4px -4px 4px rgba(58, 68, 93, 0.5), 4px 4px 4px #060C18, inset -4px -4px 4px rgba(58, 68, 93, 0.5), inset 4px 4px 4px #060C18;
+    border-radius: 8px;
   }
   #step3-container {
     display: none;
