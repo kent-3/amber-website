@@ -19,7 +19,9 @@
 
 #header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 200px;
+
   height: 985px;
   margin: -25px -32px;
   
@@ -32,7 +34,7 @@
   display: flex;
   flex-direction: column;
   padding: 3rem;
-  margin-top: 56px;
+  margin-top: 40px;
   margin-left: 70px;
 }
 #logo-container #logo-image img{
@@ -62,7 +64,7 @@
 
 #illustration {
   padding: 3rem;
-  margin-top: 56px;
+  margin-top: 40px;
   margin-right: 70px;
 }
 #illustration img {
@@ -588,7 +590,7 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  gap: 35px;
 }
 #eligibility-header h1 {
   text-align: center;
@@ -604,26 +606,59 @@
 #node-digest {
   display: flex;
   align-items: top;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: -2rem -2rem;
-  margin-top: -5rem;
-  height: 1300px;
+  margin: -2rem 0rem;
+  height: 1266px;
 
   background-image: url(/calculator-background.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
 }
+#node-digest-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-self: center;
+  align-self: center;
+  align-items: flex-start;
+  width: 595px;
+  height: 294px;
+  margin-top: 285px;
+}
 #node-digest h1 {
-  display: inline-block;
-  margin-top: 17rem;
+  color: #FEFFFF;
+  margin-block-start: 0px;
+  margin-block-end: 1em;
+}
+.node-digest-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 88px;
+}
+.node-digest-key {
+  width: 160px;
+  height: 20px;
+
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: rgba(255, 255, 255, 0.54);
+}
+.node-digest-value {
   text-align:center;
   color: #FEFFFF;
-  font-weight: 800;
-  font-size: 2.75rem;
+  font-weight: 600;
+  font-size: 18px;
 }
+
 #node-digest h2 {
   display: inline-block;
   margin: auto;
@@ -631,8 +666,7 @@
   line-height: 3rem;
 }
 #node-digest img {
-  display: inline-block;
-  padding: 3rem;
+  transform: translateY(35px);
 }
 
 .yellow {

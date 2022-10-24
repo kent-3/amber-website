@@ -55,7 +55,11 @@ window.onload = async ()=>{
 
   document.querySelector<HTMLElement>('#stake-value').innerHTML=`${scrt}`
   document.querySelector<HTMLElement>('#voting-power').innerHTML=`${scrt}`
-
   document.querySelector<HTMLElement>('#delegators').innerHTML=`${total}`
 
 }
+
+// const formatter = new Intl.NumberFormat('en-US', {
+//   style: 'currency',
+//   currency: 'USD',
+// });
