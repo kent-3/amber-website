@@ -123,6 +123,8 @@
   overflow: none; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-transition: visibility ease 2s;
+  transition: visibility ease 2s;
 }
 
 /* Modal Content/Box */
@@ -143,7 +145,7 @@
 
   box-shadow: -8px -8px 8px rgba(58, 68, 93, 0.5), 8px 8px 8px #060C18;
   border-radius: 8px;
-}
+  }
 
 .modal-content-container {
   display: grid;
@@ -151,7 +153,7 @@
   width: 100%;
   height: 100%;
   margin-top: -0rem;
-  transform: translateY(-5%);
+  transform: translateY(-50px);
   z-index: 1;
 }
 
@@ -605,12 +607,12 @@
 
 #node-digest {
   display: flex;
-  align-items: top;
+  align-items: center;
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: -2rem 0rem;
-  height: 1266px;
+  margin: -0px -32px;
+  height: 1300px;
 
   background-image: url(/calculator-background.svg);
   background-repeat: no-repeat;
@@ -643,14 +645,12 @@
 .node-digest-key {
   width: 160px;
   height: 20px;
-
+  color: rgba(255, 255, 255, 0.54);
   font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-
-  color: rgba(255, 255, 255, 0.54);
 }
 .node-digest-value {
   text-align:center;
@@ -658,15 +658,11 @@
   font-weight: 600;
   font-size: 18px;
 }
-
 #node-digest h2 {
   display: inline-block;
   margin: auto;
   color: #FEFFFF;
   line-height: 3rem;
-}
-#node-digest img {
-  transform: translateY(35px);
 }
 
 .yellow {
@@ -970,20 +966,31 @@ h1 {
     justify-items: center;
     align-items: center;
     margin: -1rem -1rem;
+    height: 900px;
+  }
+  #node-digest-container {
+    width: auto;
+    height: auto;
+    margin-top: 180px;
+    justify-self: center;
+    align-self: center;
+    padding: 0 30px;
   }
   #node-digest h1{
     text-align: left;
-    margin-top: 200px;
-    width: 90vw;
-    line-height: 3rem;
+    line-height: 2.75rem;
   }
-  #node-digest h2{
-    text-align: left;
-    width: 90vw;
+  .node-digest-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
   }
+
   #node-digest img {
-    padding: 3rem 0;
-    width: 95vw;
+    width: 90vw;
+    transform: translateY(0px);
   }
   #where-to-stake{
     display: flex;

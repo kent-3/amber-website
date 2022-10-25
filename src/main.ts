@@ -20,10 +20,10 @@ var helpText = document.querySelector<HTMLElement>('#helptext')
 
 
 open.onclick = () => {
-  modal.style.display = "block";
+  modal.style.display = "block"
 }
 close.onclick = function() {
-  modal.style.display = "none";
+  modal.style.display = "none"
 }
 help.onclick = () => {
   if (helpText.style.visibility == "hidden") {
