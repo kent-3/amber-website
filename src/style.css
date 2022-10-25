@@ -22,13 +22,13 @@
   justify-content: center;
   column-gap: 200px;
 
-  height: 985px;
-  margin: -25px -32px;
+  height: 970px;
+  margin-top: -2px;
   
   background-image: url(/header-background.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom;
+  background-position: top;
 }
 #logo-container {
   display: flex;
@@ -76,6 +76,7 @@
   display: block;
   padding: 3rem;
   width: 500px;
+  color: #20365E;
 }
 
 #claim-container {
@@ -596,8 +597,6 @@
 }
 #eligibility-header h1 {
   text-align: center;
-  padding: 0 10px;
-  line-height: 1.2;
 }
 
 .section {
@@ -611,8 +610,7 @@
   justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: -0px -32px;
-  height: 1300px;
+  height: 1266px;
 
   background-image: url(/calculator-background.svg);
   background-repeat: no-repeat;
@@ -677,7 +675,6 @@
   justify-self: center;
   align-self: center;
   height: 374px;
-  margin-top: 6rem;
 
   background-image: url(/where-to-stake.svg);
   background-repeat: no-repeat;
@@ -701,7 +698,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  transform: translateX(518px);
+  transform: translateX(473px);
 }
 
 #sticker {
@@ -720,21 +717,21 @@
 #footer {
   position: relative;
   display: flex;
-  height: 480px;
-  margin: -2rem -2rem;
-  margin-top: -226px;
+  height: 455px;
+  margin-top: -235px;
   background-image: url(/footer.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: bottom;
 }
 
 body {
-  overflow: hidden scroll;
-  overflow: -moz-hidden-unscrollable scroll;
+  overflow: clip scroll;
   align-items: center;
   align-content: center;
   justify-content: center;
+  width: 100%;
+  margin: 0 0;
 }
 h1 {
   font-weight: 800;
@@ -772,7 +769,11 @@ h1 {
 }
 
 @media (max-width: 1024px) {
-  #header-container{
+  body {
+    width: initial;
+    margin: initial;
+  }
+  #header-container {
     background-size: cover;
     justify-content: center;
     align-items: center;
@@ -791,16 +792,16 @@ h1 {
     justify-items: center;
     width: auto;
     height: auto;
-    max-width: 90vw;
+    width: 90vw;
   }
   #logo-container #logo-text img{
     padding-top: 0px;
     margin: 0;
     justify-self: center;
     justify-items: center;
-    max-width: 90vw;
     width: auto;
     height: auto;
+    width: 90vw;
   }
   #illustration {
     display: none;
@@ -813,6 +814,9 @@ h1 {
     padding: 0 20px;
     color: #20365E;
     line-height: 30px;
+  }
+  #about h1 {
+    color: #20365E;
   }
   #about p {
     color: #20365E;
@@ -955,26 +959,30 @@ h1 {
     height: 50px;
     width: 210px;
   }
-  #eligibility-header h1{
+  #eligibility-section {
+    gap: 0;
+  }
+  #eligibility-header h1 {
     text-align: left;
+    margin: 0 25px;
+    line-height: 2.75rem;
   }
   #node-digest {
     background-size: cover;
     justify-items: center;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
     justify-items: center;
     align-items: center;
-    margin: -1rem -1rem;
+    margin: -0px -0px;
     height: 900px;
   }
   #node-digest-container {
     width: auto;
     height: auto;
-    margin-top: 180px;
+    margin: 180px 20px 20px 20px;
     justify-self: center;
     align-self: center;
-    padding: 0 30px;
   }
   #node-digest h1{
     text-align: left;
@@ -994,7 +1002,7 @@ h1 {
   }
   #where-to-stake{
     display: flex;
-    margin-top: 0;
+    margin: 0 0;
   }
   #follow {
     height: auto;
@@ -1009,8 +1017,9 @@ h1 {
     transform: none;
   }
   #footer {
-    margin-top: 100px;
+    margin-top: 200px;
     background-size: cover;
     background-position: bottom;
+    margin: 0 0;
   }
 }
