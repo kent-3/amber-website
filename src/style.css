@@ -587,6 +587,10 @@
   flex-wrap: wrap;
 }
 
+#eligibility-header h1 {
+  text-align: center;
+  color: #121E34;
+}
 #eligibility-section {
   display: flex;
   align-items: top;
@@ -595,8 +599,11 @@
   flex-wrap: wrap;
   gap: 35px;
 }
-#eligibility-header h1 {
-  text-align: center;
+#eligibility-section h2 {
+  color: #121E34;
+}
+#eligibility-section p {
+  color: #1E3256;
 }
 
 .section {
@@ -667,19 +674,107 @@
   color: #FFBF00;
 }
 
-#where-to-stake {
-  position: relative;
-
+#support-us-section {
   display: flex;
   flex-direction: column;
-  justify-self: center;
-  align-self: center;
-  height: 374px;
+  align-items: center;
+  gap: 30px;
+}
 
-  background-image: url(/where-to-stake.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+#support-us-section h1 {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 56px;
+  color: #121E34;
+}
+#support-us-section h2 {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;  
+  text-align: left;
+}
+
+#where-to-stake-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px;
+  max-width: 1153px;
+}
+
+.stake-card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 114px;
+  width: fit-content;
+  background: linear-gradient(315deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #F0F1F5;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -2.66667px -2.66667px 8px #FFFFFF, 4px 4px 8px rgba(174, 174, 192, 0.4), inset 0px 0px 0px 0.533333px rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+.stake-card .lebel {
+  position: absolute;
+}
+.stake-card .lebel img {
+  transform: translateX(-20px) translateY(-27px);
+}
+.stake-card .text {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #20365E;
+  padding: 20px;
+  padding-left: 30px;
+}
+.stake-card .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  /* width: 30px;
+  height: 30px; */
+  background-color: #D3D3D3;
+  mask-size: cover;
+}
+.stake-card .icon:last-child {
+  margin-right: 30px;
+}
+.stake-card .icon:hover {
+  background-color: #60BFCF;
+}
+
+.icon-web {
+  mask: url(/Web.svg) no-repeat;
+  width: 28px;
+  height: 28px;
+}
+.icon-chrome {
+  mask: url(/Chrome.svg) no-repeat;
+  width: 30px;
+  height: 30px;
+}
+.icon-ledger {
+  mask: url(/Ledger.svg) no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.icon-apple {
+  mask: url(/Apple.svg) no-repeat;
+  width: 27px;
+  height: 31px;
+}
+.icon-android {
+  mask: url(/Android.svg) no-repeat;
+  width: 28px;
+  height: 34px;
 }
 
 #follow-container {
@@ -711,7 +806,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  transform: translateX(612px);
+  transform: translateX(570px);
 }
 
 #footer {
