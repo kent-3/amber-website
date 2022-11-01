@@ -4,6 +4,7 @@ import { setupConnectKeplr } from "./connect-keplr";
 import { setupConnectWallet } from "./connect-wallet";
 // import { setupMetaMask } from "./metamask";
 import { setupSuggestToken } from "./suggest-token";
+import axios from "axios";
 
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-fina')!)
@@ -41,6 +42,11 @@ window.onclick = function(event) {
 } 
 
 window.onload = async ()=>{
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+  
   const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
   const chainId = import.meta.env.VITE_MAINNET_CHAIN_ID
   const secretjs = await SecretNetworkClient.create({
@@ -50,16 +56,17 @@ window.onload = async ()=>{
 
   const { validator: validatorResponse } = await secretjs.query.staking.validator({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6'})
   const scrt = Math.round(parseInt(validatorResponse.tokens) / 1000000 )
+  document.querySelector<HTMLElement>('#voting-power').innerHTML=`${scrt.toLocaleString()}`
+
+  axios.get('https://api.coingecko.com/api/v3/simple/price?ids=secret&vs_currencies=usd')
+  .then(res => {
+    document.querySelector<HTMLElement>('#stake-value').innerHTML=`${formatter.format(scrt * res.data.secret.usd)}`
+  })
+  .catch(error => {
+    console.log(error)
+  })
+
   const { delegationResponses: delegationResponse } = await secretjs.query.staking.validatorDelegations({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'10000'}})
   const total: number = delegationResponse.length
-
-  document.querySelector<HTMLElement>('#stake-value').innerHTML=`${scrt}`
-  document.querySelector<HTMLElement>('#voting-power').innerHTML=`${scrt}`
-  document.querySelector<HTMLElement>('#delegators').innerHTML=`${total}`
-
+  document.querySelector<HTMLElement>('#delegators').innerHTML=`${total.toLocaleString()}`
 }
-
-// const formatter = new Intl.NumberFormat('en-US', {
-//   style: 'currency',
-//   currency: 'USD',
-// });
