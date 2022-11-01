@@ -76,7 +76,13 @@
   display: block;
   padding: 3rem;
   width: 500px;
+}
+#about h1 {
+  color: #121E34;
+}
+#about p {
   color: #20365E;
+  line-height: 30px;
 }
 
 #claim-container {
@@ -739,9 +745,8 @@
   align-items: center;
   justify-content: center;
   margin: 20px;
-  /* width: 30px;
-  height: 30px; */
   background-color: #D3D3D3;
+  -webkit-mask-size: cover;
   mask-size: cover;
 }
 .stake-card .icon:last-child {
@@ -752,29 +757,39 @@
 }
 
 .icon-web {
+  -webkit-mask: url(/Web.svg) no-repeat;
   mask: url(/Web.svg) no-repeat;
   width: 28px;
   height: 28px;
 }
 .icon-chrome {
+  -webkit-mask: url(/Chrome.svg) no-repeat;
   mask: url(/Chrome.svg) no-repeat;
   width: 30px;
   height: 30px;
 }
 .icon-ledger {
+  -webkit-mask: url(/Ledger.svg) no-repeat;
   mask: url(/Ledger.svg) no-repeat;
   width: 25px;
   height: 25px;
 }
 .icon-apple {
+  -webkit-mask: url(/Apple.svg) no-repeat;
   mask: url(/Apple.svg) no-repeat;
   width: 27px;
   height: 31px;
 }
 .icon-android {
+  -webkit-mask: url(/Android.svg) no-repeat;
   mask: url(/Android.svg) no-repeat;
   width: 28px;
   height: 34px;
+}
+.invisible-link {
+  visibility: hidden;
+  width: 30px;
+  height: 30px;
 }
 
 #follow-container {
@@ -789,11 +804,51 @@
   height: 408px;
   width: 600px;
 
-  background-image: url(/follow.svg);
+  background-image: url('/follow.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   transform: translateX(473px);
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+.icon:hover {
+  background-color: #60BFCF
+}
+.icon-telegram {
+  width: 35px;
+  height: 35px;
+  -webkit-mask: url('/Telegram icon hover.svg') no-repeat;
+  mask: url('/Telegram icon hover.svg') no-repeat;
+}
+.icon-twitter {
+  width: 35px;
+  height: 35px;
+  -webkit-mask: url('/Twitter icon hover.svg') no-repeat;
+  mask: url('/Twitter icon hover.svg') no-repeat;
+}
+.icon-github {
+  width: 35px;
+  height: 35px;
+  -webkit-mask: url('/GitHub icon hover.svg') no-repeat;
+  mask: url('/GitHub icon hover.svg') no-repeat;
+}
+.sm-icon-container {
+  display: flex;
+  flex-flow: row nowrap;
+  width: fit-content;
+}
+#follow-links {
+  position: relative;
+  top: 201.5px;
+  left: 133.25px;
 }
 
 #sticker {
@@ -812,12 +867,43 @@
 #footer {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
   height: 455px;
   margin-top: -235px;
-  background-image: url(/footer.svg);
+  background-image: url('/Footer background.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
+}
+#footer-content {
+  display: flex;
+  color: rgba(255, 255, 255, 0.54);
+  width: 1225px;
+  justify-content: space-between;
+  position: relative;
+  bottom: 100px;
+}
+#footer-content p {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+#footer-links {
+  align-items: center;
+}
+#footer-links .icon {
+  background-color: rgba(255, 255, 255, 0.54);
+  width: 25px;
+  height: 25px;
+  margin: 15px;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+#footer-links .icon:hover {
+  background-color: #60BFCF
 }
 
 body {
@@ -833,7 +919,7 @@ h1 {
   font-size: 46px;
 }
 
-.pulse {
+/* .pulse {
   border-radius: 8px;
   background: #121E34;
   cursor: pointer;
@@ -861,7 +947,7 @@ h1 {
   opacity: 1;
   transition: opacity 500ms ease 0s, transform 400ms ease 0s;
   transform: translateX(-4px) translateY(-4px);
-}
+} */
 
 @media (max-width: 1024px) {
   body {
@@ -907,16 +993,9 @@ h1 {
     align-items: flex-start;
     width: auto;
     padding: 0 20px;
-    color: #20365E;
     line-height: 30px;
   }
-  #about h1 {
-    color: #20365E;
-  }
-  #about p {
-    color: #20365E;
-    line-height: 30px;
-  }
+
   #claim-container {
     display: flex;
     flex-direction: column;
