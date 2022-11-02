@@ -15,7 +15,8 @@ export function setupClaim(element: HTMLButtonElement) {
         event.preventDefault()
         element.disabled = true
 
-        
+        document.getElementById("step3-container").style.display = "none"
+        document.getElementById("step4-container").style.display = "flex"
 
         const keplrOfflineSigner = window.keplr.getOfflineSignerOnlyAmino(CHAIN_ID)
         const [{ address: myAddress }] = await keplrOfflineSigner.getAccounts()
@@ -74,16 +75,14 @@ export function setupClaim(element: HTMLButtonElement) {
             (log) => log.type === "wasm" && log.key === "status"
             )!.value;
             alert(response);
+            document.getElementById("status-bubble-4").style.color = "#121E34"
+            document.getElementById("status-bubble-4").style.backgroundColor = "#FFBF00"
+            document.getElementById("status-bubble-4-label").style.color = "#FFBF00"
+            document.getElementById("status-line-5").innerHTML = `<img src="/line-5-yellow.svg" alt="">`
+
+            document.getElementById("step4-container").style.display = "none"
+            document.getElementById("success-container").style.display = "flex"
+            document.getElementById("modal-content").style.backgroundImage = `url("/heart-illustration.svg")`
         }
-
-        document.getElementById("status-bubble-4").style.color = "#121E34"
-        document.getElementById("status-bubble-4").style.backgroundColor = "#FFBF00"
-        document.getElementById("status-bubble-4-label").style.color = "#FFBF00"
-        document.getElementById("status-line-5").innerHTML = `<img src="/line-5-yellow.svg" alt="">`
-
-        document.getElementById("step3-container").style.display = "none"
-        document.getElementById("success-container").style.display = "flex"
-        document.getElementById("modal-content").style.backgroundImage = `url("/heart-illustration.svg")`
-        
     })
 }

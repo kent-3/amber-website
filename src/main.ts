@@ -22,9 +22,11 @@ var helpText = document.querySelector<HTMLElement>('#helptext')
 
 open.onclick = () => {
   modal.style.display = "block"
+  document.body.style.overflowY = "hidden"
 }
 close.onclick = function() {
   modal.style.display = "none"
+  document.body.style.overflowY = "scroll"
 }
 help.onclick = () => {
   if (helpText.style.visibility == "hidden") {
@@ -38,6 +40,7 @@ help.onclick = () => {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    document.body.style.overflowY = "scroll"
   }
 } 
 

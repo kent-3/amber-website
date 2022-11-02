@@ -7,56 +7,56 @@ export function setupConnectKeplr(element: HTMLButtonElement) {
         element.disabled = true
 
         if (!window.getOfflineSigner || !window.keplr) {
-            alert("Please install Keplr extension");
+            alert("No compatible wallet detected");
         } 
-    //     else {
-    // ////////////////////////////////////////////////////////////////////////
-    //         if (CHAIN_ID.includes("pulsar") && window.keplr.experimentalSuggestChain) {
-    //         try {
-    //             await window.keplr.experimentalSuggestChain({
-    //             chainId: "pulsar-2",
-    //             chainName: "Secret Testnet",
-    //             rpc: "https://rpc.testnet.secretsaturn.net",
-    //             rest: "https://lcd.testnet.secretsaturn.net",
-    //             stakeCurrency: {
-    //                 coinDenom: "SCRT",
-    //                 coinMinimalDenom: "uscrt",
-    //                 coinDecimals: 6,
-    //             },
-    //             bip44: {
-    //                 coinType: 529,
-    //             },
-    //             bech32Config: {
-    //                 bech32PrefixAccAddr: "secret",
-    //                 bech32PrefixAccPub: "secretpub",
-    //                 bech32PrefixValAddr: "secretvaloper",
-    //                 bech32PrefixValPub: "secretvaloperpub",
-    //                 bech32PrefixConsAddr: "secretvalcons",
-    //                 bech32PrefixConsPub: "secretvalconspub"
-    //             },
-    //             currencies: [{
-    //                 coinDenom: "SCRT",
-    //                 coinMinimalDenom: "uscrt",
-    //                 coinDecimals: 6,
-    //             }],
-    //             feeCurrencies: [{
-    //                 coinDenom: "SCRT",
-    //                 coinMinimalDenom: "uscrt",
-    //                 coinDecimals: 6,
-    //                 coinGeckoId: "secret"
-    //             }],
-    //             coinType: 529,
-    //             features: ["secretwasm", "ibc-go"]
-    //             });
-    //         } catch {
-    //             alert("Failed to suggest the chain");
-    //             }
-    //         } else {
-    //             alert("Please use the recent version of keplr extension"); 
-    //         }
-    //     }
-    // ////////////////////////////////////////////////////////////////////////
-    //     console.log("pulsar-2 added")
+        else {
+    ////////////////////////////////////////////////////////////////////////
+            if (CHAIN_ID.includes("pulsar") && window.keplr.experimentalSuggestChain) {
+            try {
+                await window.keplr.experimentalSuggestChain({
+                chainId: "pulsar-2",
+                chainName: "Secret Testnet",
+                rpc: "https://rpc.testnet.secretsaturn.net",
+                rest: "https://lcd.testnet.secretsaturn.net",
+                stakeCurrency: {
+                    coinDenom: "SCRT",
+                    coinMinimalDenom: "uscrt",
+                    coinDecimals: 6,
+                },
+                bip44: {
+                    coinType: 529,
+                },
+                bech32Config: {
+                    bech32PrefixAccAddr: "secret",
+                    bech32PrefixAccPub: "secretpub",
+                    bech32PrefixValAddr: "secretvaloper",
+                    bech32PrefixValPub: "secretvaloperpub",
+                    bech32PrefixConsAddr: "secretvalcons",
+                    bech32PrefixConsPub: "secretvalconspub"
+                },
+                currencies: [{
+                    coinDenom: "SCRT",
+                    coinMinimalDenom: "uscrt",
+                    coinDecimals: 6,
+                }],
+                feeCurrencies: [{
+                    coinDenom: "SCRT",
+                    coinMinimalDenom: "uscrt",
+                    coinDecimals: 6,
+                    coinGeckoId: "secret"
+                }],
+                coinType: 529,
+                features: ["secretwasm", "ibc-go"]
+                });
+            } catch {
+                alert("Failed to suggest the chain");
+                }
+            } else {
+                alert("Please use the recent version of keplr extension"); 
+            }
+        }
+    ////////////////////////////////////////////////////////////////////////
+        console.log("pulsar-2 added")
         await window.keplr.enable(CHAIN_ID)
         console.log("keplr enabled")
 
