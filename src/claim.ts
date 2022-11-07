@@ -30,7 +30,7 @@ export function setupClaim(element: HTMLButtonElement) {
         encryptionUtils: window.keplr.getEnigmaUtils(CHAIN_ID),
         })
 
-        const myBytes = bech32ToBytes("secret1qsjlkyspurmrhmp0fzchtfguqyvzfdwhn9seu6");
+        const myBytes = bech32ToBytes("secret1pr7t6rzap0eqwlvecu3kpfk88emcry4wx0am8a");
         console.log(myBytes)
         //@ts-ignore
         console.log(snapshot.claims[myBytes])
@@ -42,12 +42,13 @@ export function setupClaim(element: HTMLButtonElement) {
         const myAmount = parseInt(snapshot.claims[myBytes].amount).toString()
         //@ts-ignore
         const myProof = snapshot.claims[myBytes].proof
+            .map( thing => thing.slice(2))
 
         const claimMsg = {
             claim: {
             // these are not my values, just test values from the actual merkle tree
             index: myIndex.toString(),
-            address: "secret1qsjlkyspurmrhmp0fzchtfguqyvzfdwhn9seu6",
+            address: "secret1pr7t6rzap0eqwlvecu3kpfk88emcry4wx0am8a",
             amount: myAmount,
             proof: myProof,
             },
@@ -62,19 +63,23 @@ export function setupClaim(element: HTMLButtonElement) {
             sentFunds: [],
             },
             {
-            gasLimit: 200000,
+            gasLimit: 300000,
             }
         );
 
         if (tx.code !== 0) {
+            console.log(tx)
             alert(
             `Failed with the following error:\n ${tx.rawLog}`
-            );
+            )
+            document.getElementById("step4-container").style.display = "none"
+            document.getElementById("error-container").style.display = "flex"
+            document.getElementById("error-message").innerHTML = `${tx.rawLog}`
         } else {
             const response = tx.arrayLog?.find(
             (log) => log.type === "wasm" && log.key === "status"
             )!.value;
-            alert(response);
+            console.log(response);
             document.getElementById("status-bubble-4").style.color = "#121E34"
             document.getElementById("status-bubble-4").style.backgroundColor = "#FFBF00"
             document.getElementById("status-bubble-4-label").style.color = "#FFBF00"

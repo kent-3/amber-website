@@ -12,7 +12,7 @@ export function setupSuggestToken(element: HTMLElement) {
         element.style.cursor = "default"
         await window.keplr.suggestToken(CHAIN_ID, amberContractAddress);
 
-        const myBytes = bech32ToBytes("secret1qsjlkyspurmrhmp0fzchtfguqyvzfdwhn9seu6");
+        const myBytes = bech32ToBytes("secret1pr7t6rzap0eqwlvecu3kpfk88emcry4wx0am8a");
         //@ts-ignore
         try {var myIndex = snapshot.claims[myBytes].index}
         catch {alert("Your address was not found in the snapshot!")}
