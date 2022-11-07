@@ -30,22 +30,22 @@ export function setupClaim(element: HTMLButtonElement) {
         encryptionUtils: window.keplr.getEnigmaUtils(CHAIN_ID),
         })
 
-        const testAddresses = [
-            "secret1pt90mfv6hldemdn9alk2j93uxuhte3gdr0uh52",
-            "secret1ptjagldmj03ssxx7yyreyczzzdhcnc7gzv5kp2",
-            "secret1p6jwgslfu6wz6df57exh4s5anqn2yrq6m68yjp",
-            "secret1zpsx3sum9rxpuhjc98a5wl5t2c57ydwfvjg4qa",
-            "secret1zssfyc2upw2rrvzem257j6tnsucxc2nuques06",
-            "secret1qzxyvdtdxxannddszsye4my56rqjkamguz3030",
-            "secret1q9d6ngwkrc4lz2qev6sl4rcprhhpl3nqnphu2r",
-            "secret1q9akppvtnvllernmk63v83y4w9d2z8wyamgw5k",
-            "secret1qf57ag69epy0qnzz9cv3trs8ge62dxs90jktzv",
-            "secret1q2yjru58ap4l67g3w6ngtyspkk5edrz9xr69tk"
-        ]
+        // const testAddresses = [
+        //     "secret1pt90mfv6hldemdn9alk2j93uxuhte3gdr0uh52",
+        //     "secret1ptjagldmj03ssxx7yyreyczzzdhcnc7gzv5kp2",
+        //     "secret1p6jwgslfu6wz6df57exh4s5anqn2yrq6m68yjp",
+        //     "secret1zpsx3sum9rxpuhjc98a5wl5t2c57ydwfvjg4qa",
+        //     "secret1zssfyc2upw2rrvzem257j6tnsucxc2nuques06",
+        //     "secret1qzxyvdtdxxannddszsye4my56rqjkamguz3030",
+        //     "secret1q9d6ngwkrc4lz2qev6sl4rcprhhpl3nqnphu2r",
+        //     "secret1q9akppvtnvllernmk63v83y4w9d2z8wyamgw5k",
+        //     "secret1qf57ag69epy0qnzz9cv3trs8ge62dxs90jktzv",
+        //     "secret1q2yjru58ap4l67g3w6ngtyspkk5edrz9xr69tk"
+        // ]
 
-        const testAddress = testAddresses[Math.floor(Math.random()*testAddresses.length)]
+        // const testAddress = testAddresses[Math.floor(Math.random()*testAddresses.length)]
 
-        const myBytes = bech32ToBytes(testAddress);
+        const myBytes = bech32ToBytes(myAddress);
         console.log(myBytes)
         //@ts-ignore
         console.log(snapshot.claims[myBytes])
@@ -63,7 +63,7 @@ export function setupClaim(element: HTMLButtonElement) {
             claim: {
             // these are not my values, just test values from the actual merkle tree
             index: myIndex.toString(),
-            address: testAddress,
+            address: myAddress,
             amount: myAmount,
             proof: myProof,
             },
@@ -78,7 +78,7 @@ export function setupClaim(element: HTMLButtonElement) {
             sentFunds: [],
             },
             {
-            gasLimit: 300000,
+            gasLimit: 350000,
             }
         );
 
