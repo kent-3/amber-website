@@ -16,7 +16,18 @@ var open = document.querySelector<HTMLButtonElement>('#start-button')
 var close = document.querySelector<HTMLButtonElement>('#close')
 var help = document.querySelector<HTMLButtonElement>('#help')
 var helpText = document.querySelector<HTMLElement>('#helptext')
+var logo = document.querySelector<HTMLImageElement>('#amber')
+var rocket = document.querySelector<HTMLImageElement>('#rocket')
 
+logo.onclick = () => {
+  logo.classList.toggle('spin')
+}
+
+rocket.onclick = () => {
+  rocket.style.transform = "translateY(-5000px)"
+
+  setTimeout( () => rocket.style.transform = "translateY(0)", 5000)
+}
 
 open.onclick = () => {
   modal.style.display = "block"
