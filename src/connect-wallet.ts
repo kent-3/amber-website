@@ -24,6 +24,7 @@ export function setupConnectWallet(element: HTMLButtonElement) {
         document.getElementById("connect-container").style.display = "none"
         document.getElementById("connect-wallet").style.display = "none"
         document.getElementById("step3-container").style.display = "grid"
+        document.getElementById("airdrop-amount").style.fontWeight = "700"
         document.getElementById("secret-address").innerHTML = 
             `${myAddress}`
     })

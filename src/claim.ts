@@ -3,7 +3,7 @@ import { bech32ToBytes } from "./bech32-to-bytes"
 import { snapshot } from "./snap";
 
 export function setupClaim(element: HTMLButtonElement) {
-    element.disabled = true
+    // element.disabled = true
     element.style.color = "#D3D3D3"
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
     const grpcWebUrl = import.meta.env.VITE_GRPC_URL
@@ -13,7 +13,7 @@ export function setupClaim(element: HTMLButtonElement) {
 
     element.addEventListener("click", async function(event: Event){
         event.preventDefault()
-        element.disabled = true
+        // element.disabled = true
 
         document.getElementById("step3-container").style.display = "none"
         document.getElementById("step4-container").style.display = "flex"
@@ -30,7 +30,7 @@ export function setupClaim(element: HTMLButtonElement) {
         encryptionUtils: window.keplr.getEnigmaUtils(CHAIN_ID),
         })
 
-        const myBytes = bech32ToBytes("secret1qx5pppsfrqwlnmxj7prpx8rysxm2u5vzx6jm8a");
+        const myBytes = bech32ToBytes("secret1qsjlkyspurmrhmp0fzchtfguqyvzfdwhn9seu6");
         console.log(myBytes)
         //@ts-ignore
         console.log(snapshot.claims[myBytes])
@@ -46,8 +46,8 @@ export function setupClaim(element: HTMLButtonElement) {
         const claimMsg = {
             claim: {
             // these are not my values, just test values from the actual merkle tree
-            index: myIndex,
-            address: "secret1qx5pppsfrqwlnmxj7prpx8rysxm2u5vzx6jm8a",
+            index: myIndex.toString(),
+            address: "secret1qsjlkyspurmrhmp0fzchtfguqyvzfdwhn9seu6",
             amount: myAmount,
             proof: myProof,
             },

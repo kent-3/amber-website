@@ -1,5 +1,4 @@
 import { SecretNetworkClient } from "secretjs";
-import { setupClaim } from './claim';
 import { setupConnectKeplr } from "./connect-keplr";
 import { setupConnectWallet } from "./connect-wallet";
 // import { setupMetaMask } from "./metamask";
@@ -11,7 +10,6 @@ setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-fina')!)
 // setupMetaMask(document.querySelector<HTMLButtonElement>('#connect-metamask')!)
 setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
 setupSuggestToken(document.querySelector<HTMLElement>('#airdrop-box')!)
-setupClaim(document.querySelector<HTMLButtonElement>('#claim-button')!)
 
 var modal = document.querySelector<HTMLElement>('#myModal')
 var open = document.querySelector<HTMLButtonElement>('#start-button')
@@ -23,10 +21,12 @@ var helpText = document.querySelector<HTMLElement>('#helptext')
 open.onclick = () => {
   modal.style.display = "block"
   document.body.style.overflowY = "hidden"
+  document.querySelector<HTMLElement>('.content').classList.toggle('modal--active')
 }
 close.onclick = function() {
   modal.style.display = "none"
   document.body.style.overflowY = "scroll"
+  document.querySelector<HTMLElement>('.content').classList.toggle('modal--active')
 }
 help.onclick = () => {
   if (helpText.style.visibility == "hidden") {
@@ -40,6 +40,7 @@ help.onclick = () => {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    document.querySelector<HTMLElement>('.content').classList.toggle('modal--active')
     document.body.style.overflowY = "scroll"
   }
 } 
