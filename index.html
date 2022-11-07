@@ -34,7 +34,9 @@
         <p>The total supply of AMBER is <b>8888</b>.</p>
       </div>
       <div id="claim-container">
-        <img src="/logo-2.png" alt="AmberDAO"> 
+        <div id="amber">
+          <img src="/logo-2.png" alt="AmberDAO">
+        </div>
         <h1>Claim AMBER</h1>
         <button id="start-button">CLAIM</button>
       </div>
@@ -88,11 +90,9 @@
         </div>
 
       </div>
-        <!-- <h2>Current Stake Value: $<span id="stake-value"></span> <span class="yellow">USD</span></h2> -->
-        <!-- <h2>Voting power: <span id="voting-power"></span> <span class="yellow">SCRT</span></h2> -->
-        <!-- <h2>Delegators: <span id="delegators"></span></h2> -->
-        <!-- <h2>Commision: 3%</h2> -->
+      <div id="rocket">
         <img src="/illustration-2.svg" alt="illustration-2.svg">
+      </div>
       </div>
 
     
@@ -286,18 +286,22 @@
             <div id="status-bubble-4-label">Claim Airdrop</div>
           </div>
         </div>
+
         <div id="connect-container">
           <h1 id="connect-message">Connect Keplr</h1>
           <img id="connect-keplr" src="keplr-button.svg" >
           <h1 id="connect-fina-message">Connect Fina</h1>
           <div id="connect-fina"></div>
         </div>
+
         <!-- <div id="connect-mm-container">
           <h1>Connect MetaMask</h1>
           <img id="connect-metamask" src="metamask-fox.svg" >
         </div> -->
+
         <div class="modal-btn" id="connect-wallet">Next
         </div>
+
         <div id="step3-container">
           <div id="your-scrt-address">
             &nbsp;Your SCRT Address
@@ -311,14 +315,23 @@
           <div class="modal-btn" id="claim-button">Claim
           </div>
         </div>
+
         <div id="step4-container">
           <div class="modal-header">Claim Airdrop</div>
           <div class="modal-text">Please <span class="bold-aqua">confirm the transaction</span> in Keplr to claim your airdrop</div>
         </div>
+
         <div id="success-container">
           <h2>Success!</h2>
           <h4><span class="yellow">You've successfully claimed your AMBER airdrop</span></h4>
         </div>
+      
+        <div id="error-container">
+          <h2>Uh oh!</h2>
+          <h4>Something went wrong:</h4>
+          <div id="error-message" class="yellow"></div>
+        </div>
+
         <div id="notice"><img src="note-icon.svg" >&emsp;This does not grant AmberDAO access to your funds. Private keys never leave your device.</div>
         </div>
       </div>
