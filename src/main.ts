@@ -60,6 +60,7 @@ window.onload = async ()=>{
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
+    maximumFractionDigits: 0
   });
   
   const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
