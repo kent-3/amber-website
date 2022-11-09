@@ -168,7 +168,6 @@
   transition: visibility ease 2s;
 }
 
-/* Modal Content/Box */
 #modal-content {
   color: rgba(255, 255, 255, 0.54);
 
@@ -179,9 +178,9 @@
   background-position: left;
   transition: background-image ease 1s;
 
-  margin: 2% auto; /* 15% from the top and centered */
+  margin: 2% auto;
   padding: 20px;
-  width: 1120px; /* Could be more or less, depending on screen size */
+  width: 1120px;
   height: 494px;
 
   box-shadow: -8px -8px 8px rgba(58, 68, 93, 0.5), 8px 8px 8px #060C18;
@@ -368,7 +367,6 @@
   justify-self: center;
   align-items: center;
   width: auto;
-  /* margin-top: 3rem; */
   margin-bottom: 0rem;
 }
 #connect-container h1 {
@@ -404,7 +402,6 @@
   justify-self: center;
   align-items: center;
   width: auto;
-  /* margin-top: 3rem; */
   margin-bottom: 0rem;
   transform: translateX(50%);
 }
@@ -472,8 +469,7 @@
   width: 210px;
   font-size: 12px;
   cursor: pointer;
-  /* color: #60BFCF; */
-  /* font-weight: 700; */
+
   font-family: Poppins, Montserrat, Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height: 18px;
@@ -630,9 +626,8 @@
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   cursor: pointer;
-} 
+}
 
-/* The Help Button */
 #help {
   display: block;
   position: relative;
@@ -657,7 +652,6 @@
   z-index: 1;
 } 
 
-/* Tooltip text */
 #help #helptext {
   position: relative;
   width: 212px;
@@ -1030,36 +1024,6 @@ h1 {
   font-size: 46px;
 }
 
-/* .pulse {
-  border-radius: 8px;
-  background: #121E34;
-  cursor: pointer;
-  box-shadow: 0 0 0 rgba(58, 68, 93, 0.5);
-  animation: pulse 2s infinite;
-}
-
-.pulse:hover {
-  animation: none;
-}
-
-@keyframes pulse {
-  0% {
-    -webkit-box-shadow: -4px -4px 4px rgba(58, 68, 93, 0.5), 4px 4px 4px rgb(6, 12, 24);
-  }
-  70% {
-    -webkit-box-shadow: -4px -4px 2px rgba(58, 68, 93, 0.3), 4px 4px 2px rgb(6, 12, 24, 0.7);
-  }
-  100% {
-    -webkit-box-shadow: -4px -4px 4px rgba(58, 68, 93, 0.5), 4px 4px 4px rgb(6, 12, 24);
-  }
-}
-
-.animated:hover {
-  opacity: 1;
-  transition: opacity 500ms ease 0s, transform 400ms ease 0s;
-  transform: translateX(-4px) translateY(-4px);
-} */
-
 @media (max-width: 1024px) {
   body {
     width: initial;
@@ -1129,9 +1093,7 @@ h1 {
     justify-self: center;
     align-self: center;
   }
-  /* .modal {
-    overflow: hidden;
-  } */
+
   .modal-content-container {
     grid-template-rows: 150px auto 125px;
     transform: translateY(-35px);
@@ -1334,7 +1296,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    transform: translateX(44px);
+    transform: translateX(55px);
   }
   #footer {
     margin-top: -105px;
