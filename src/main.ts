@@ -82,7 +82,7 @@ window.onload = async ()=>{
     console.log(error)
   })
 
-  const { delegationResponses: delegationResponse } = await secretjs.query.staking.validatorDelegations({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'10000'}})
-  const total: number = delegationResponse.length
-  document.querySelector<HTMLElement>('#delegators').innerHTML=`${total.toLocaleString()}`
+  const { pagination: {total: delegators} } = await secretjs.query.staking.validatorDelegations({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'1', countTotal: true}})
+  const delegatorsNum = parseInt(delegators)
+  document.querySelector<HTMLElement>('#delegators').innerHTML=`${delegatorsNum.toLocaleString()}`
 }
