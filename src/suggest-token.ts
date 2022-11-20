@@ -18,7 +18,15 @@ export function setupSuggestToken(element: HTMLElement) {
         const myBytes = bech32ToBytes(myAddress);
         //@ts-ignore
         try {var myIndex = snapshot.claims[myBytes].index}
-        catch {alert("Your address was not found in the snapshot!")}
+        catch {
+            alert("Your address was not found in the snapshot!")
+            document.getElementById("airdrop-amount").style.fontSize = "16px"
+            document.getElementById("airdrop-amount").innerHTML = `0 AMBER 😢`
+
+            document.getElementById("status-bubble-3").style.color = "#121E34"
+            document.getElementById("status-bubble-3").style.backgroundColor = "#FFBF00"
+            document.getElementById("status-bubble-3-label").style.color = "#FFBF00"
+        }
         //@ts-ignore
         const myAmount = (parseInt(snapshot.claims[myBytes].amount) / 1000000).toString() + " AMBER"
 
