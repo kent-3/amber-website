@@ -1208,6 +1208,10 @@ h1 {
     height: 50px;
     width: 210px;
   }
+  #success-container h4 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+  }
   #notice {
     transform: none;
   }
