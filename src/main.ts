@@ -1,9 +1,9 @@
-import { SecretNetworkClient } from "secretjs";
+// import { SecretNetworkClient } from "secretjs";
 import { setupConnectKeplr } from "./connect-keplr";
 import { setupConnectWallet } from "./connect-wallet";
 // import { setupMetaMask } from "./metamask";
 import { setupSuggestToken } from "./suggest-token";
-import axios from "axios";
+// import axios from "axios";
 
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
 setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-fina')!)
