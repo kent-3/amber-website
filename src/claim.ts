@@ -3,7 +3,6 @@ import { bech32ToBytes } from "./bech32-to-bytes"
 import { snapshot } from "./snap";
 
 export function setupClaim(element: HTMLButtonElement) {
-    // element.disabled = true
     element.style.color = "#D3D3D3"
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
     const grpcWebUrl = import.meta.env.VITE_GRPC_URL
