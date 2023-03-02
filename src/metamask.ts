@@ -5,7 +5,8 @@ import { snapshot } from "./snap";
 export function setupMetaMask(element: HTMLButtonElement) {
     element.disabled = false
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
-    const grpcWebUrl = import.meta.env.VITE_GRPC_URL
+    // const grpcWebUrl = import.meta.env.VITE_GRPC_URL
+    const lcdUrl = import.meta.env.VITE_LCD_URL
 
     const distributorContractAddress = import.meta.env.VITE_CONTRACT_ADDRESS
     const distributorContractHash = import.meta.env.VITE_CONTRACT_CODE_HASH
@@ -25,8 +26,8 @@ export function setupMetaMask(element: HTMLButtonElement) {
         //@ts-ignore
         const wallet = await MetaMaskWallet.create(window.ethereum, ethAddress);
   
-        const secretjs = await SecretNetworkClient.create({
-            grpcWebUrl: grpcWebUrl,
+        const secretjs = new SecretNetworkClient({
+            url: lcdUrl,
             chainId: CHAIN_ID,
             wallet: wallet,
             walletAddress: wallet.address,
@@ -80,10 +81,10 @@ export function setupMetaMask(element: HTMLButtonElement) {
         const tx = await secretjs.tx.compute.executeContract(
             {
             sender: secretjs.address,
-            contractAddress: distributorContractAddress,
-            codeHash: distributorContractHash,
+            contract_address: distributorContractAddress,
+            code_hash: distributorContractHash,
             msg: claimMsg,
-            sentFunds: [],
+            sent_funds: [],
             },
             {
             gasLimit: 300000,
