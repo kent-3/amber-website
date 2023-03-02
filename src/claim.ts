@@ -5,7 +5,8 @@ import { snapshot } from "./snap";
 export function setupClaim(element: HTMLButtonElement) {
     element.style.color = "#D3D3D3"
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
-    const grpcWebUrl = import.meta.env.VITE_GRPC_URL
+    // const grpcWebUrl = import.meta.env.VITE_GRPC_URL
+    const lcdUrl = import.meta.env.VITE_LCD_URL
 
     const distributorContractAddress = import.meta.env.VITE_CONTRACT_ADDRESS
     const distributorContractHash = import.meta.env.VITE_CONTRACT_CODE_HASH
@@ -20,8 +21,8 @@ export function setupClaim(element: HTMLButtonElement) {
         const [{ address: myAddress }] = await keplrOfflineSigner.getAccounts()
         console.log(myAddress)
 
-        const secretjs = await SecretNetworkClient.create({
-        grpcWebUrl,
+        const secretjs = new SecretNetworkClient({
+        url: lcdUrl,
         chainId: CHAIN_ID,
         wallet: keplrOfflineSigner,
         walletAddress: myAddress,
@@ -51,10 +52,10 @@ export function setupClaim(element: HTMLButtonElement) {
         const tx = await secretjs.tx.compute.executeContract(
             {
             sender: secretjs.address,
-            contractAddress: distributorContractAddress,
-            codeHash: distributorContractHash,
+            contract_address: distributorContractAddress,
+            code_hash: distributorContractHash,
             msg: claimMsg,
-            sentFunds: [],
+            sent_funds: [],
             },
             {
             gasLimit: 350000,

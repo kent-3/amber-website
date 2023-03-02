@@ -1,15 +1,13 @@
 import { SecretNetworkClient } from "secretjs";
-import { setupConnectKeplr } from "./connect-keplr";
-import { setupConnectWallet } from "./connect-wallet";
-// import { setupMetaMask } from "./metamask";
-import { setupSuggestToken } from "./suggest-token";
+// import { setupConnectKeplr } from "./connect-keplr";
+// import { setupConnectWallet } from "./connect-wallet";
+// import { setupSuggestToken } from "./suggest-token";
 import axios from "axios";
 
-setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
-setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-fina')!)
-// setupMetaMask(document.querySelector<HTMLButtonElement>('#connect-metamask')!)
-setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
-setupSuggestToken(document.querySelector<HTMLElement>('#airdrop-box')!)
+// setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-keplr')!)
+// setupConnectKeplr(document.querySelector<HTMLButtonElement>('#connect-fina')!)
+// setupConnectWallet(document.querySelector<HTMLButtonElement>('#connect-wallet')!)
+// setupSuggestToken(document.querySelector<HTMLElement>('#airdrop-box')!)
 
 var modal = document.querySelector<HTMLElement>('#myModal')
 var open = document.querySelector<HTMLButtonElement>('#start-button')
@@ -18,6 +16,11 @@ var help = document.querySelector<HTMLButtonElement>('#help')
 var helpText = document.querySelector<HTMLElement>('#helptext')
 var logo = document.querySelector<HTMLImageElement>('#amber')
 var rocket = document.querySelector<HTMLImageElement>('#rocket')
+
+document.querySelector<HTMLDivElement>('#connect-container').style.alignSelf = "center"
+document.querySelector<HTMLDivElement>('#connect-container').innerHTML = `
+  <h1> Claim Over! </h1>
+`
 
 logo.onclick = () => {
   logo.classList.toggle('spin')
@@ -63,14 +66,15 @@ window.onload = async ()=>{
     maximumFractionDigits: 0
   });
   
-  const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
+  // const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
+  const lcdUrl = import.meta.env.VITE_LCD_URL
   const chainId = import.meta.env.VITE_MAINNET_CHAIN_ID
-  const secretjs = await SecretNetworkClient.create({
-    grpcWebUrl,
+  const secretjs = new SecretNetworkClient({
+    url: lcdUrl,
     chainId,
   });
 
-  const { validator: validatorResponse } = await secretjs.query.staking.validator({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6'})
+  const { validator: validatorResponse } = await secretjs.query.staking.validator({validator_addr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6'})
   const scrt = Math.round(parseInt(validatorResponse.tokens) / 1000000 )
   document.querySelector<HTMLElement>('#voting-power').innerHTML=`${scrt.toLocaleString()}`
 
@@ -82,7 +86,7 @@ window.onload = async ()=>{
     console.log(error)
   })
 
-  const { pagination: {total: delegators} } = await secretjs.query.staking.validatorDelegations({validatorAddr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'1', countTotal: true}})
+  const { pagination: {total: delegators} } = await secretjs.query.staking.validatorDelegations({validator_addr: 'secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6', pagination: {limit:'1', count_total: true}})
   const delegatorsNum = parseInt(delegators)
   document.querySelector<HTMLElement>('#delegators').innerHTML=`${delegatorsNum.toLocaleString()}`
 }

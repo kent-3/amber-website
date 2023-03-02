@@ -377,7 +377,7 @@
 }
 #connect-container img {
   height: 4.5rem;
-  cursor: pointer;
+  cursor: default;
   margin-top: 2rem;
   width: 210px;
   justify-self: center;
