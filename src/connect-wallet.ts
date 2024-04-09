@@ -1,6 +1,6 @@
 export function setupConnectWallet(element: HTMLButtonElement) {
     element.disabled = false
-    const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
+    const CHAIN_ID = "secret-4"
 
     element.onpointerdown = ()=> {
         element.style.boxShadow = `inset -4px -4px 4px rgba(58, 68, 93, 0.5), inset 4px 4px 4px #060C18`

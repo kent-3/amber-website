@@ -4,8 +4,8 @@ import { setupClaim } from './claim';
 
 export function setupSuggestToken(element: HTMLElement) {
 
-    const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
-    const amberContractAddress: string = import.meta.env.VITE_SNIP20_ADDRESS
+    const CHAIN_ID = "secret-4"
+    const amberContractAddress: string = "secret1s09x2xvfd2lp2skgzm29w2xtena7s8fq98v852"
 
     element.addEventListener("click", async function(event: Event){
         event.preventDefault()

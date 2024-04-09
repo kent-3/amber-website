@@ -5,7 +5,6 @@ import { snapshot } from "./snap";
 export function setupMetaMask(element: HTMLButtonElement) {
     element.disabled = false
     const CHAIN_ID = import.meta.env.VITE_CHAIN_ID
-    // const grpcWebUrl = import.meta.env.VITE_GRPC_URL
     const lcdUrl = import.meta.env.VITE_LCD_URL
 
     const distributorContractAddress = import.meta.env.VITE_CONTRACT_ADDRESS

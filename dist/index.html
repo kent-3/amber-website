@@ -2,19 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AmberDAO</title>
-    <script type="module" crossorigin src="/assets/index.2bc77e18.js"></script>
-    <link rel="stylesheet" href="/assets/index.f855b773.css">
+    <link rel="icon" type="image/png" href="/logo.png" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700,800" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900" />
+
+    <!-- WHIP-002 App Name: overrides name set by page title -->
+    <meta name="application-name" content="Amber" />
+    <!-- WHIP-002 App Icon: overrides low-res raster icons -->
+    <link rel="icon" type="image/svg+xml" href="/amber.svg" />
+
+    <!-- WHIP-003 Entity Declarations -->
+
+    <!-- chain icon -->
+    <link rel="prefetch" as="image" href="/secret-network.svg" data-caip-2="cosmos:secret-4">
+
+    <!-- asset icon for native coin -->
+    <link rel="prefetch" as="image" href="/scrt.svg" data-caip-19="cosmos:secret-4/slip44:529">
+
+    <!-- account icon for non-token smart contact -->
+    <link rel="prefetch" as="image" href="/sticker.svg" data-caip-10="cosmos:secret-4:secret1hctvs6s48yu7pr2n3ujn3wn74fr5d798daqwwg">
+
+    <!-- asset icon for token -->
+    <link rel="prefetch" as="image" href="https://raw.githubusercontent.com/SolarRepublic/WHIPs/main/WHIPs/whip-004/amber.svg" data-caip-19="cosmos:secret-4:snip20/secret1s09x2xvfd2lp2skgzm29w2xtena7s8fq98v852">
+
+    <!-- entity definitions, with an entry corresponding to each icon above -->
+    <script type="application/toml" data-whip-003>
+      [chains.secret-network]
+      namespace = "cosmos"
+      reference = "secret-4"
+      label = "Secret Network"
+      bech32s = "secret"
+
+      [coins.scrt]
+      chain = "cosmos:secret-4"
+      slip44 = 529
+      symbol = "SCRT"
+      label = "Secret"
+
+      [contracts.distributor]
+      chain = "cosmos:secret-4"
+      address = "secret1hctvs6s48yu7pr2n3ujn3wn74fr5d798daqwwg"
+      label = "Amber Distributor"
+
+      [contracts.cosmos_secret-4_amber]
+      chain = "cosmos:secret-4"
+      address = "secret1s09x2xvfd2lp2skgzm29w2xtena7s8fq98v852"
+      label = "Amber"
+      [contracts.cosmos_secret-4_amber.snip20]
+      symbol = "AMBER"
+    </script>
+
+    <script type="module" crossorigin src="/assets/index.85dc6774.js"></script>
+    <link rel="stylesheet" href="/assets/index.8d94bfb6.css">
   </head>
   <body>
-    <!-- <div id="top-bg"></div> -->
+  <div class="content">
     <div id="header-container">
-      <div id="logo">
-        <img src="/logo.png" alt="AmberDAO"> 
-        <h1>AmberDAO</h1>
+      <div id="logo-container">
+        <div id="logo-image">
+          <img src="/logo-2.png" alt="Amber">
+        </div>
+        <div id="logo-text">
+          <img src="/AmberDAO.png" alt="AmberDAO">
+        </div>
       </div>
       <div id="illustration">
         <img src="/illustration.svg" alt="illustration.png">
@@ -23,20 +76,26 @@
     <div id="mid-section">
       <div id="about">
         <h1>About</h1>
-        <p><b>Amber DAO</b> is a community-led DeFi experiment in sound money.</p>
+        <br>
+        <p style="text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"> <b>Amber DAO</b> is a community-led DeFi experiment in sound money.</p>
         <p><b>AMBER</b> is the token governing the Amber DAO.</p>
         <p>The goal of the Amber DAO is to make AMBER the go-to <b>store-of-value</b> token in the Secret Network ecosystem.</p>
         <p>The total supply of AMBER is <b>8888</b>.</p>
       </div>
       <div id="claim-container">
-        <img src="/logo.png" alt="AmberDAO"> 
+        <div id="amber">
+          <img src="/logo-2.png" alt="AmberDAO">
+        </div>
         <h1>Claim AMBER</h1>
-        <button id="claim-button">CLAIM</button>
+        <button id="start-button">CLAIM</button>
       </div>
     </div>
-      <h1 style="text-align:center;">Airdrop Eligibility Criteria</h1>
+      <div id="eligibility-header">
+        <h1>Airdrop Eligibility Criteria</h1>
+        <br>
+      </div>
       <div id="eligibility-section">
-      <div class="section">
+        <div class="section">
         <h2>$SCRT Stakers</h2>
         <p>$SCRT delegators staking a minimum of <b>44.44</b> $SCRT with an eligible validator by block <b>4008888</b> will receive an airdrop of <b>0.2</b> $AMBER</p>
       </div>
@@ -44,7 +103,7 @@
         <h2>Ineligibile Validators</h2>
         <ul>
           <li>All <b>0% commission validators</b>.</li>
-          <li>All <b>exchage validators</b> (this includes: Kraken, Huobi).</li>
+          <li>All <b>exchange validators</b> (this includes: Kraken, Huobi).</li>
           <li>All <b>corporate validators</b> (this includes: Staked, Chorus One, B-Harvest, Figment, Outlier Ventures, HashQuark).</li>
         </ul>
       </div>
@@ -54,18 +113,279 @@
       </div>
     </div>
     <div id="node-digest">
+
+      <div id="node-digest-container">
+        
         <h1>AmberDAO Node Digest</h1>
-        <p>Current Stake Value</p><div id="stake-value"></div>
-        <p>Voting Power</p>
-        <p>Delegators</p>
-        <p>Commision</p>
+
+        <div class="node-digest-item">
+          <div class="node-digest-key">Current Stake Value</div>
+          <div class="node-digest-value"><span id="stake-value">$404,540</span> <span class="yellow">USD</span></div>
+        </div>
+
+        <div class="node-digest-item">
+          <div class="node-digest-key">Voting Power</div>
+          <div class="node-digest-value"><span id="voting-power">485,175</span> <span class="yellow">SCRT</span></div>
+        </div>
+
+        <div class="node-digest-item">
+          <div class="node-digest-key">Delegators</div>
+          <div class="node-digest-value"><span id="delegators">1,889</span></div>
+        </div>
+
+        <div class="node-digest-item">
+          <div class="node-digest-key">Commission</div>
+          <div class="node-digest-value"><span id="commission">3%</span></div>
+        </div>
+
+      </div>
+      <div id="rocket">
         <img src="/illustration-2.svg" alt="illustration-2.svg">
       </div>
-    <!-- <div id="app">
-    </div> -->
+      </div>
+
+    
+    <div id="support-us-section">
+      <h1>Support us by Delegating $SCRT to AmberDAO</h1>
+      <div id="where-to-stake-container">
+        <div class="stake-card">
+          <div class="lebel">
+            <img src="citadel lebel.svg" >
+          </div>
+          <div class="text">Citadel.one</div>
+          <div class="icon icon-web">
+            <a href="https://citadel.one/" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-ledger">
+            <a href="https://app.citadel.one/auth/login" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-apple">
+            <a href="https://apps.apple.com/us/app/citadel-one/id1546701475" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-android">
+            <a href="https://play.google.com/store/apps/details?id=one.citadel.mobile" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+        </div>
+        <div class="stake-card">
+          <div class="lebel">
+            <img src="keplr lebel.svg" >
+          </div>
+            <div class="text">Keplr</div>
+            <div class="icon icon-chrome">
+              <a href="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap" target="_blank">
+                <div class="invisible-link"></div>
+              </a>
+            </div>
+            <div class="icon icon-ledger">
+              <a href="https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap" target="_blank">
+                <div class="invisible-link"></div>
+              </a>
+            </div>
+          </div>
+        <div class="stake-card">
+          <div class="lebel">
+            <img src="puzzle lebel.svg" >
+          </div>
+          <div class="text">SecretNodes</div>
+          <div class="icon icon-ledger">
+            <a href="https://secretnodes.com/secret/validators/secretvaloper18w7rm926ue3nmy8ay58e3lc2nqnttrlhhgpch6" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+        </div>
+        <div class="stake-card">
+          <div class="lebel">
+            <img src="cosmostation lebel.svg" >
+          </div>
+          <div class="text">Cosmostation</div>
+          <div class="icon icon-chrome">
+            <a href="https://chrome.google.com/webstore/detail/cosmostation/fpkhgmpbidmiogeglndfbkegfdlnajnf" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-ledger">
+            <a href="https://wallet.cosmostation.io/cosmos" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-apple">
+            <a href="https://apps.apple.com/app/cosmostation/id1459830339" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-android">
+            <a href="https://play.google.com/store/apps/details?id=wannabit.io.cosmostaion" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+        </div>
+        <div class="stake-card">
+          <div class="lebel">
+            <img src="mathwallet lebel.svg" >
+          </div>
+          <div class="text">MathWallet</div>
+          <div class="icon icon-web">
+            <a href="https://mathwallet.org/en-us/" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-apple">
+            <a href="https://apps.apple.com/us/app/mathwallet-web3-wallet/id1582612388" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-android">
+            <a href="https://play.google.com/store/apps/details?id=com.medishares.android" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+        </div>
+      
+      <h2>Please note that all node revenue will be reinvested in <br>AmberDAO (LP incentives, One Amber Club, etc.)</h2>
+      </div>
+    </div>  
+    <div id="follow-container">
+      <div id="follow">
+        <div id="follow-links" class="sm-icon-container">
+          <div class="icon icon-telegram">
+            <a href="https://t.me/AmberDAOscrt" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-twitter">
+            <a href="https://twitter.com/AmberDAO_" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-github">
+            <a href="https://github.com/kent-3/amber" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div id="sticker"></div>
+    <div id="footer">
+      <div id="footer-content">
+        <div id="footer-links" class="sm-icon-container">
+          <div class="icon icon-telegram">
+            <a href="https://t.me/AmberDAOscrt" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-twitter">
+            <a href="https://twitter.com/AmberDAO_" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+          <div class="icon icon-github">
+            <a href="https://github.com/kent-3/amber" target="_blank">
+              <div class="invisible-link"></div>
+            </a>
+          </div>
+        </div>
+        <p>© AmberDAO 2022</p>
+        <p>designed by&nbsp;<u>katusuna</u></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div id="modal-content">
+      <div id="close"></div>
+      <div id="help">?
+      <span id="helptext" style="visibility: hidden;">
+          <img src="help-tooltip.svg" >
+          <a href="https://t.me/AmberDAOscrt" target="_blank"><div class="tg-icon"></div></a>
+      </span>
+      </div>
+
+      <div class="modal-content-container">
+        <div class="status-container">
+          <div id="status-bubble-1">1
+            <div id="status-bubble-1-label">Wallet Type</div>
+          </div>
+          <div id="status-line-3">
+            <img src="/Line 3.svg" alt="">
+          </div>
+          <div id="status-bubble-2">2
+            <div id="status-bubble-2-label">Connect Wallet</div>
+          </div>
+          <div id="status-line-4">
+            <img src="/Line 4.svg" alt="">
+          </div>
+          <div id="status-bubble-3">3
+            <div id="status-bubble-3-label">Airdrop Amount</div>
+          </div>
+          <div id="status-line-5">
+            <img src="/Line 5.svg" alt="">
+          </div>
+          <div id="status-bubble-4">4
+            <div id="status-bubble-4-label">Claim Airdrop</div>
+          </div>
+        </div>
+
+        <div id="connect-container">
+          <h1 id="connect-message">Connect Keplr</h1>
+          <img id="connect-keplr" src="keplr-button.svg" >
+          <h1 id="connect-fina-message">Connect Fina</h1>
+          <div id="connect-fina"></div>
+        </div>
+
+        <!-- <div id="connect-mm-container">
+          <h1>Connect MetaMask</h1>
+          <img id="connect-metamask" src="metamask-fox.svg" >
+        </div> -->
+
+        <div class="modal-btn" id="connect-wallet">Next
+        </div>
+
+        <div id="step3-container">
+          <div id="your-scrt-address">
+            &nbsp;Your SCRT Address
+          </div>
+          <div class="modal-box" id="address-field">
+            <img src="scrt-logo.svg" style="height:25px;">&emsp;<span id="secret-address">secret address</span>
+          </div>
+          <div id="airdrop-box">
+            <div class="modal-box"><span id="airdrop-amount">Airdrop amount (create vk)</span></div>
+          </div>
+          <div class="modal-btn" id="claim-button">Claim
+          </div>
+        </div>
+
+        <div id="step4-container">
+          <div class="modal-header">Claim Airdrop</div>
+          <div class="modal-text">Please <span class="bold-aqua">confirm the transaction</span> in Keplr to claim your airdrop</div>
+        </div>
+
+        <div id="success-container">
+          <h2>Success!</h2>
+          <h4><span class="yellow">You've successfully claimed your AMBER airdrop</span></h4>
+        </div>
+      
+        <div id="error-container">
+          <h2>Uh oh!</h2>
+          <h4>Something went wrong:</h4>
+          <div id="error-message" class="yellow"></div>
+        </div>
+
+        <div id="notice"><img src="note-icon.svg" >&emsp;This does not grant AmberDAO access to your funds. Private keys never leave your device.</div>
+        </div>
+      </div>
+    </div>
+
     
   </body>
-  <footer>
-    
-  </footer>
 </html>

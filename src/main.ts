@@ -67,8 +67,8 @@ window.onload = async ()=>{
   });
   
   // const grpcWebUrl = import.meta.env.VITE_MAINNET_GRPC_URL
-  const lcdUrl = import.meta.env.VITE_LCD_URL
-  const chainId = import.meta.env.VITE_MAINNET_CHAIN_ID
+  const lcdUrl = "https://lcd.mainnet.secretsaturn.net"
+  const chainId = "secret-4"
   const secretjs = new SecretNetworkClient({
     url: lcdUrl,
     chainId,
