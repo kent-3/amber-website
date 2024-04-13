@@ -5,7 +5,8 @@
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite dev",
+    "preview": "vite preview",
     "build": "tsc && vite build"
   },
   "devDependencies": {
