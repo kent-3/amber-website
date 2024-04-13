@@ -4,21 +4,18 @@
   "version": "0.1.0",
   "main": "src/main.ts",
   "type": "module",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build"
   },
   "devDependencies": {
-    "@keplr-wallet/types": "^0.11.6",
-    "@types/node": "^18.7.23",
-    "typescript": "^4.8.4",
-    "vite": "^3.1.4"
+    "@keplr-wallet/types": "^0.12.8",
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8"
   },
   "dependencies": {
-    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "axios": "^0.26.1",
     "buffer": "^6.0.3",
     "cors": "^2.8.5",
